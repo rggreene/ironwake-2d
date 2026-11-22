@@ -108,3 +108,7 @@ The live `index.html` now draws a layered humanoid M14 Bastion with independent 
 ## v0.7 — Weapon aim sync correction
 
 The live bundled page now matches the illustrated rifle facing to the firing target within the leg-forward 180-degree hemisphere. Visual torso motion spans up to 90° each side; no eligible target returns the torso to center. Muzzle spawn and multishot spread are oriented to the gun and cannot extend behind the legs. Existing localStorage save keys are unchanged. Full editable v0.7 TypeScript source and test are included in the downloadable v0.7 ZIP.\n
+
+## v0.8 — Full-body Bastion sprite repair
+
+The deployed root `index.html` now uses intact 8-direction illustrated frames (4 poses per direction) rather than cutting the weapon, torso and legs into mismatched layers. Armor ownership changes the frame's existing armor colors rather than painting blocky patches over the art. For legible firing, the muzzle and target arc now stay near the selected full-body direction (±45°). The familiar BOOP and previous progression save keys remain. This is a focused player-art repair, not a full art-production overhaul. The editable v0.8 source and complete atlas are included in `ironwake-2d-v0.8.zip` supplied in the project chat; the repository `src/main.ts` requires a follow-up source sync, but root `index.html` is the deployed build.
