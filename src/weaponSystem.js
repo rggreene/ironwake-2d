@@ -18,7 +18,7 @@ var WeaponKit;
     }
     WeaponKit.rotateLocal = rotateLocal;
     function inArc(origin, target, dir, arcDeg) {
-        const half = Math.min(180, Math.max(0, arcDeg)) / 2 * Math.PI / 180;
+        const half = Math.min(360, Math.max(0, arcDeg)) / 2 * Math.PI / 180;
         return Math.abs(diff(polarAngle(origin, target), bearing(dir))) <= half + 1e-9;
     }
     WeaponKit.inArc = inArc;
@@ -89,4 +89,4 @@ var WeaponKit;
     WeaponKit.validateDefinition = validateDefinition;
 })(WeaponKit || (WeaponKit = {}));
 
-// Browser-independent geometry and weapon targeting; generated from src/weaponSystem.ts.
+// Generated from src/weaponSystem.ts (editable source included in v0.9 ZIP).
