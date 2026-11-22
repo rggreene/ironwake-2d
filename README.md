@@ -76,3 +76,10 @@ assets/bastion-concept-reference.png
 - The combat HUD displays live volleys/s, multishot, penetration, and estimated projectiles/s.
 - End-of-run reports now show rounds fired, peak output, and peak volley size.
 - Keeps existing permanent salvage/armor saves intact. Projectile budget is capped to protect mobile performance.
+
+
+## v0.3 — Bastion visual overhaul
+
+The live `index.html` now draws a layered humanoid M14 Bastion with independent animated legs, a compact camera sensor head, visible arms holding a separate autocannon, gun-based recoil/ejection positions, a permanent armor visual layer, and the tiny red BOOP light. Gameplay and save keys remain unchanged from v0.2.
+
+**Development note:** The latest v0.3 editable TypeScript and rebuilt bundled page are in the downloadable `ironwake-2d-v0.3.zip` archive supplied in the ChatGPT project conversation. The repository `src/main.ts` is still the v0.2 source; its v0.3 replacement has not yet been synced here. For running the latest version, use the root `index.html`.
