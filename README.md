@@ -112,3 +112,12 @@ The live bundled page now matches the illustrated rifle facing to the firing tar
 ## v0.8 — Full-body Bastion sprite repair
 
 The deployed root `index.html` now uses intact 8-direction illustrated frames (4 poses per direction) rather than cutting the weapon, torso and legs into mismatched layers. Armor ownership changes the frame's existing armor colors rather than painting blocky patches over the art. For legible firing, the muzzle and target arc now stay near the selected full-body direction (±45°). The familiar BOOP and previous progression save keys remain. This is a focused player-art repair, not a full art-production overhaul. The editable v0.8 source and complete atlas are included in `ironwake-2d-v0.8.zip` supplied in the project chat; the repository `src/main.ts` requires a follow-up source sync, but root `index.html` is the deployed build.
+
+
+## v0.9 — Reusable weapon architecture
+
+The live game uses a weapon-independent pipeline. Each weapon definition specifies its slot, targeting arc, aiming mode, eight muzzle and shell-ejection anchors, projectile visuals, and optional stat overrides. Weapons now have separate target acquisition and cooldowns. The Bastion autocannon snaps its full-body sprite to a supported firing direction and launches projectiles from the matching muzzle anchor.
+
+The architecture supports body-snap, fixed-forward, and independent-turret modes for future weapons. There are 347 passing targeting geometry assertions, including a simulated second weapon slot. Only the autocannon is currently playable.
+
+The v0.9 ZIP in the ChatGPT conversation contains the current editable TypeScript, atlas, and tests. GitHub also has the deployed root index.html and generated src/weaponSystem.js and src/game.js. The older src/main.ts in GitHub is not yet synchronized, so use the v0.9 ZIP if making TypeScript source changes.
