@@ -121,3 +121,10 @@ The live game uses a weapon-independent pipeline. Each weapon definition specifi
 The architecture supports body-snap, fixed-forward, and independent-turret modes for future weapons. There are 347 passing targeting geometry assertions, including a simulated second weapon slot. Only the autocannon is currently playable.
 
 The v0.9 ZIP in the ChatGPT conversation contains the current editable TypeScript, atlas, and tests. GitHub also has the deployed root index.html and generated src/weaponSystem.js and src/game.js. The older src/main.ts in GitHub is not yet synchronized, so use the v0.9 ZIP if making TypeScript source changes.
+
+
+## v1.0 — Straight-ahead automatic fire
+
+The Bastion's handheld autocannon now fires continuously in the eight-direction chassis facing, even if no enemy is visible. It no longer turns to track nearby targets and no longer uses a front-arc target filter. Multishot still fans out around the forward heading, and the reusable WeaponKit continues to support independently targeted future weapons. No changes to permanent saves or upgrade purchases. The live `index.html` is self-contained, including the Bastion sprite atlas.
+
+The `iw-v10` archive from the project conversation includes editable TypeScript and the direction test suite.
