@@ -67,3 +67,12 @@ assets/bastion-concept-reference.png
 2. Replace the procedural sprite with deliberately authored transparent 2D atlases (consistent frames and attachment points).
 3. Implement a uniform-grid spatial index and object pools, and measure large-swarm performance.
 4. Add the deployment vehicle intro, separate hangar equipment model, and more permanent modules.
+
+## v0.2 — Weapon engineering and mission report fix
+
+- Mission report is now hidden while the permanent-upgrade hangar is open; returning restores the report after a failed run.
+- Stacking **MULTI-FEED** allows up to 10 projectiles per volley.
+- **OVERDRIVE**, **SPREAD CHOKE**, **PENETRATOR SLUGS**, and **STABILIZED DRIVE** add build diversity.
+- The combat HUD displays live volleys/s, multishot, penetration, and estimated projectiles/s.
+- End-of-run reports now show rounds fired, peak output, and peak volley size.
+- Keeps existing permanent salvage/armor saves intact. Projectile budget is capped to protect mobile performance.
