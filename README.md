@@ -92,3 +92,14 @@ The live `index.html` now draws a layered humanoid M14 Bastion with independent 
 - Handheld autocannon appearance, recoil, red optical startup light, and permanent visible armor remain.
 - Full PNG atlas and matching TypeScript source are included in the downloadable v0.5 project package.
 - Browser playtesting and Github Pages delivery are not yet independently verified. Generated source art has a visible waist seam at some opposing aim/walk angles; this is a sprite-art limitation to improve in later revisions.
+
+
+## v0.6 — Forward-facing Bastion combat arc
+
+- The autocannon now acquires targets only within 180° in front of the leg/chassis heading; threats behind are ignored until you turn.
+- Upper-body sprite facing is limited to 45° to either side so the mech cannot break its spine.
+- Sprite atlas waist seam was re-cut to prevent the lower body displaying duplicate rifle pixels.
+- Directional artwork is recentered per view, and upper-body recoil no longer shifts its entire sprite.
+- Combat damage, upgrades, saves, enemy logic, and existing controls are otherwise unchanged.
+- The root `index.html` includes its Bastion sprite atlas inline so GitHub Pages needs no separate image asset.
+- Full editable v0.6 sources are in the downloadable project ZIP; the `src/main.ts` in this repo may lag behind the deployed browser build.
