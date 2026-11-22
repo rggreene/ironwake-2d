@@ -103,3 +103,8 @@ The live `index.html` now draws a layered humanoid M14 Bastion with independent 
 - Combat damage, upgrades, saves, enemy logic, and existing controls are otherwise unchanged.
 - The root `index.html` includes its Bastion sprite atlas inline so GitHub Pages needs no separate image asset.
 - Full editable v0.6 sources are in the downloadable project ZIP; the `src/main.ts` in this repo may lag behind the deployed browser build.
+
+
+## v0.7 — Weapon aim sync correction
+
+The live bundled page now matches the illustrated rifle facing to the firing target within the leg-forward 180-degree hemisphere. Visual torso motion spans up to 90° each side; no eligible target returns the torso to center. Muzzle spawn and multishot spread are oriented to the gun and cannot extend behind the legs. Existing localStorage save keys are unchanged. Full editable v0.7 TypeScript source and test are included in the downloadable v0.7 ZIP.\n
