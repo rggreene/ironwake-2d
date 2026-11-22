@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v0.3</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v0.4</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
 
 #gun-stats{font-size:10px;color:#f0b772;white-space:nowrap;margin-left:auto}#weapon-output{font-size:14px}.weapon-stat{min-width:125px}@media(max-width:720px){#gun-stats{font-size:8px;max-width:49vw;white-space:normal;text-align:right} .bottom{bottom:12px}}
 </style></head><body>
@@ -56,121 +56,106 @@ function drawBastionPart(part) {
     return tex(96, 96, c => {
         const armor = '#6c7b60', highlight = '#a1ad8a', edge = '#27343a', steel = '#3b484a', shade = '#435243', bolt = '#bdba95';
         if (part === 'hip') {
-            rect(c, 30, 48, 36, 13, edge);
-            rect(c, 34, 50, 28, 11, steel);
-            rect(c, 37, 52, 22, 5, armor);
-            rect(c, 31, 61, 12, 7, edge);
-            rect(c, 53, 61, 12, 7, edge);
-            rect(c, 34, 47, 28, 4, shade);
-            rect(c, 45, 53, 6, 4, bolt);
+            // Narrow pelvis block positioned between the legs so the frame reads as upright.
+            rect(c, 34, 40, 28, 12, edge);
+            rect(c, 38, 42, 20, 8, steel);
+            rect(c, 40, 43, 16, 4, armor);
+            rect(c, 35, 50, 10, 6, edge);
+            rect(c, 51, 50, 10, 6, edge);
+            rect(c, 42, 47, 12, 3, shade);
         }
         if (part === 'leftLeg' || part === 'rightLeg') {
-            // Long separated leg, visible knee articulation and planted armored foot.
-            rect(c, 34, 13, 28, 18, edge);
-            rect(c, 37, 17, 22, 13, armor);
-            rect(c, 39, 18, 18, 3, highlight);
-            rect(c, 39, 28, 18, 13, steel);
-            rect(c, 42, 30, 12, 12, edge);
-            rect(c, 44, 32, 8, 6, bolt);
-            rect(c, 35, 40, 26, 29, edge);
-            rect(c, 38, 43, 20, 24, armor);
-            rect(c, 40, 45, 16, 4, highlight);
-            rect(c, 40, 51, 16, 5, shade);
-            rect(c, 43, 55, 10, 9, steel);
-            rect(c, 32, 67, 32, 15, edge);
-            rect(c, 34, 68, 28, 11, armor);
-            rect(c, 33, 78, 30, 6, shade);
-            rect(c, 37, 69, 22, 4, highlight);
-            rect(c, 37, 81, 22, 3, '#1b262b');
-            rect(c, 36, 74, 3, 4, bolt);
-            rect(c, 57, 74, 3, 4, bolt);
+            // Long, load-bearing leg with a clear thigh, knee, shin and planted foot.
+            rect(c, 38, 10, 20, 20, edge);
+            rect(c, 41, 13, 14, 14, armor);
+            rect(c, 42, 13, 12, 3, highlight);
+            rect(c, 42, 28, 12, 10, steel);
+            rect(c, 44, 30, 8, 7, bolt);
+            rect(c, 36, 37, 24, 20, edge);
+            rect(c, 39, 40, 18, 15, armor);
+            rect(c, 41, 40, 14, 3, highlight);
+            rect(c, 41, 49, 14, 4, shade);
+            rect(c, 34, 56, 28, 19, edge);
+            rect(c, 37, 59, 22, 14, steel);
+            rect(c, 39, 60, 18, 4, highlight);
+            rect(c, 32, 72, 32, 10, edge);
+            rect(c, 35, 73, 26, 7, armor);
+            rect(c, 34, 79, 28, 3, shade);
+            rect(c, 39, 74, 18, 3, highlight);
         }
         if (part === 'torso') {
-            // Angular armored shoulder + IFV cockpit, with a compact turret-like camera head.
-            rect(c, 31, 60, 34, 13, edge);
-            rect(c, 36, 62, 24, 9, steel);
-            rect(c, 25, 20, 46, 46, edge);
-            rect(c, 29, 23, 38, 39, armor);
-            rect(c, 31, 25, 34, 5, highlight);
-            rect(c, 34, 32, 28, 25, shade);
-            rect(c, 38, 34, 20, 19, armor);
-            rect(c, 39, 35, 18, 4, highlight);
-            rect(c, 40, 53, 16, 5, steel);
-            rect(c, 43, 56, 10, 3, bolt);
-            // Shoulder sockets and separate armored shoulder blocks.
-            rect(c, 14, 28, 16, 27, edge);
-            rect(c, 16, 30, 14, 22, armor);
-            rect(c, 18, 31, 11, 4, highlight);
-            rect(c, 66, 28, 16, 27, edge);
-            rect(c, 66, 30, 14, 22, armor);
-            rect(c, 67, 31, 11, 4, highlight);
-            rect(c, 18, 47, 11, 5, shade);
-            rect(c, 67, 47, 11, 5, shade);
-            // Low armored camera helmet, NOT a continuous glowing visor.
-            rect(c, 37, 12, 22, 19, edge);
-            rect(c, 40, 10, 16, 19, steel);
-            rect(c, 38, 14, 20, 6, armor);
-            rect(c, 40, 13, 16, 3, highlight);
-            rect(c, 40, 21, 6, 5, '#0e1c22');
-            rect(c, 50, 21, 6, 5, '#0e1c22');
-            rect(c, 41, 22, 3, 2, '#8cabb0');
-            rect(c, 52, 22, 3, 2, '#8cabb0');
-            rect(c, 46, 18, 4, 4, '#2b383b');
-            rect(c, 58, 14, 4, 4, edge);
-            rect(c, 60, 8, 2, 10, steel);
-            rect(c, 19, 34, 3, 3, bolt);
-            rect(c, 73, 34, 3, 3, bolt);
-            // Unit numbers / stencil and lower access panels.
-            rect(c, 31, 47, 4, 7, '#c2b995');
-            rect(c, 36, 47, 2, 7, '#c2b995');
-            rect(c, 59, 48, 4, 2, '#b3a279');
+            // Higher torso block, clear shoulder line, compact helmet-like sensor package.
+            rect(c, 29, 58, 38, 9, edge);
+            rect(c, 35, 59, 26, 6, steel);
+            rect(c, 22, 22, 52, 37, edge);
+            rect(c, 27, 25, 42, 31, armor);
+            rect(c, 30, 26, 36, 4, highlight);
+            rect(c, 31, 31, 34, 18, shade);
+            rect(c, 37, 33, 22, 14, armor);
+            rect(c, 39, 34, 18, 3, highlight);
+            rect(c, 13, 30, 17, 18, edge);
+            rect(c, 16, 32, 13, 14, armor);
+            rect(c, 18, 32, 10, 3, highlight);
+            rect(c, 66, 30, 17, 18, edge);
+            rect(c, 67, 32, 13, 14, armor);
+            rect(c, 68, 32, 10, 3, highlight);
+            rect(c, 39, 9, 18, 16, edge);
+            rect(c, 42, 7, 12, 16, steel);
+            rect(c, 41, 12, 14, 4, armor);
+            rect(c, 43, 11, 10, 2, highlight);
+            rect(c, 43, 18, 4, 4, '#0e1c22');
+            rect(c, 49, 18, 4, 4, '#0e1c22');
+            rect(c, 44, 19, 2, 2, '#8cabb0');
+            rect(c, 50, 19, 2, 2, '#8cabb0');
+            rect(c, 56, 12, 4, 4, edge);
+            rect(c, 58, 6, 2, 10, steel);
+            rect(c, 32, 45, 4, 6, '#c2b995');
+            rect(c, 38, 45, 2, 6, '#c2b995');
+            rect(c, 59, 46, 4, 2, '#b3a279');
         }
         if (part === 'leftArm' || part === 'rightArm') {
-            rect(c, 34, 18, 28, 16, edge);
-            rect(c, 37, 19, 22, 12, armor);
-            rect(c, 38, 19, 19, 4, highlight);
-            rect(c, 38, 33, 20, 12, steel);
-            rect(c, 40, 34, 16, 10, edge);
-            rect(c, 35, 44, 26, 21, edge);
-            rect(c, 38, 46, 20, 17, armor);
-            rect(c, 39, 47, 18, 4, highlight);
-            rect(c, 39, 61, 18, 11, steel);
-            rect(c, 40, 64, 16, 6, shade);
-            rect(c, 41, 68, 14, 10, edge);
-            rect(c, 43, 70, 10, 6, armor);
+            // Slimmer arm so the machine reads less like a quadruped.
+            rect(c, 38, 16, 20, 16, edge);
+            rect(c, 41, 18, 14, 11, armor);
+            rect(c, 42, 18, 12, 3, highlight);
+            rect(c, 40, 31, 16, 12, steel);
+            rect(c, 42, 32, 12, 9, edge);
+            rect(c, 37, 42, 22, 17, edge);
+            rect(c, 40, 45, 16, 12, armor);
+            rect(c, 41, 45, 14, 3, highlight);
+            rect(c, 40, 57, 16, 10, steel);
+            rect(c, 42, 60, 12, 6, shade);
+            rect(c, 42, 66, 12, 9, edge);
+            rect(c, 44, 68, 8, 5, armor);
         }
         if (part === 'gun') {
-            // Handheld heavy rifle: separate barrel, receiver, grip, external magazine.
-            rect(c, 40, 6, 16, 58, edge);
-            rect(c, 44, 3, 8, 23, '#727e77');
-            rect(c, 45, 2, 6, 20, '#c0bca1');
-            rect(c, 43, 13, 10, 4, shade);
-            rect(c, 37, 27, 22, 27, steel);
-            rect(c, 39, 29, 18, 21, armor);
-            rect(c, 40, 30, 16, 4, highlight);
-            rect(c, 36, 40, 24, 6, edge);
-            rect(c, 40, 52, 16, 10, edge);
-            rect(c, 41, 54, 14, 7, shade);
-            rect(c, 42, 62, 13, 12, '#514b3b');
-            rect(c, 44, 65, 8, 8, bolt);
-            rect(c, 40, 34, 4, 10, '#b1a078');
-            rect(c, 38, 46, 5, 13, edge);
-            rect(c, 50, 25, 6, 3, '#bcbb9a');
+            // Side-carried autocannon, clearly in-hand instead of center-mounted like a turret.
+            rect(c, 42, 8, 12, 46, edge);
+            rect(c, 45, 5, 6, 20, '#727e77');
+            rect(c, 45, 4, 6, 16, '#c0bca1');
+            rect(c, 44, 14, 8, 3, shade);
+            rect(c, 36, 24, 24, 19, steel);
+            rect(c, 39, 26, 18, 14, armor);
+            rect(c, 40, 26, 16, 3, highlight);
+            rect(c, 34, 36, 28, 5, edge);
+            rect(c, 40, 43, 15, 8, edge);
+            rect(c, 42, 45, 11, 5, shade);
+            rect(c, 42, 51, 12, 12, '#514b3b');
+            rect(c, 44, 54, 8, 7, bolt);
+            rect(c, 39, 31, 4, 9, '#b1a078');
+            rect(c, 37, 41, 5, 10, edge);
         }
         if (part === 'armor') {
-            // Actual shoulder/chest overlay that fits the humanoid torso.
-            rect(c, 30, 26, 36, 34, '#253439');
-            rect(c, 33, 28, 30, 28, '#8c9b7d');
-            rect(c, 36, 29, 24, 4, '#bdc5a8');
-            rect(c, 38, 35, 20, 18, '#7b8e70');
-            rect(c, 44, 36, 8, 15, '#455949');
-            rect(c, 34, 55, 28, 4, '#586e5a');
-            rect(c, 16, 30, 14, 22, '#8e9f80');
-            rect(c, 66, 30, 14, 22, '#8e9f80');
-            rect(c, 17, 32, 12, 4, '#c0c7a8');
-            rect(c, 67, 32, 12, 4, '#c0c7a8');
-            rect(c, 18, 48, 10, 3, shade);
-            rect(c, 68, 48, 10, 3, shade);
+            rect(c, 28, 27, 40, 27, '#253439');
+            rect(c, 31, 29, 34, 21, '#8c9b7d');
+            rect(c, 34, 30, 28, 3, '#bdc5a8');
+            rect(c, 39, 35, 18, 12, '#7b8e70');
+            rect(c, 43, 35, 8, 11, '#455949');
+            rect(c, 35, 50, 26, 4, '#586e5a');
+            rect(c, 16, 32, 13, 14, '#8e9f80');
+            rect(c, 67, 32, 13, 14, '#8e9f80');
+            rect(c, 17, 33, 11, 3, '#c0c7a8');
+            rect(c, 68, 33, 11, 3, '#c0c7a8');
         }
         if (part === 'eye') {
             // Tiny red ready light, not a visor. Illuminates with the startup BOOP.
@@ -218,26 +203,27 @@ function makeMech() {
     const hip = spr(textures.hip);
     leftLeg = spr(textures.leftLeg);
     rightLeg = spr(textures.rightLeg);
-    leftLeg.position.set(-17, 20);
-    rightLeg.position.set(17, 20);
+    leftLeg.position.set(-15, 32);
+    rightLeg.position.set(15, 32);
     legs.addChild(leftLeg, rightLeg, hip);
     torso = new PIXI.Container();
+    torso.position.set(0, -16);
     body = spr(textures.torso);
     armorOverlay = spr(textures.armor);
     armorOverlay.visible = armorOwned;
     leftArm = spr(textures.leftArm);
     rightArm = spr(textures.rightArm);
-    leftArm.position.set(-27, 5);
-    rightArm.position.set(27, 5);
-    leftArm.rotation = -.18;
-    rightArm.rotation = .16;
+    leftArm.position.set(-23, -5);
+    rightArm.position.set(23, -5);
+    leftArm.rotation = -.12;
+    rightArm.rotation = .12;
     gun = spr(textures.gun);
-    gun.position.set(19, -18);
+    gun.position.set(26, -10);
     coreEye = spr(textures.eye);
     coreEye.visible = false;
     torso.addChild(body, armorOverlay, leftArm, rightArm, gun, coreEye);
     mech.addChild(legs, torso);
-    mech.scale.set(.69);
+    mech.scale.set(.72);
     entities.addChild(mech);
     return mech;
 }
@@ -254,16 +240,16 @@ function renderPreview() {
             c.drawImage(t.__sourceCanvas, x - w / 2, y - h / 2, w, h);
         }
         // Match the actual in-game humanoid rig, at hangar scale.
-        layer('leftLeg', 96 - 17, 96 + 20);
-        layer('rightLeg', 96 + 17, 96 + 20);
+        layer('leftLeg', 96 - 15, 96 + 32);
+        layer('rightLeg', 96 + 15, 96 + 32);
         layer('hip', 96, 96);
-        layer('torso', 96, 96);
+        layer('torso', 96, 96 - 16);
         if (armorOwned)
-            layer('armor', 96, 96);
-        layer('leftArm', 96 - 27, 96 + 5);
-        layer('rightArm', 96 + 27, 96 + 5);
-        layer('gun', 96 + 19, 96 - 18);
-        layer('eye', 96, 96);
+            layer('armor', 96, 96 - 16);
+        layer('leftArm', 96 - 23, 96 - 21);
+        layer('rightArm', 96 + 23, 96 - 21);
+        layer('gun', 96 + 26, 96 - 26);
+        layer('eye', 96, 96 - 16);
     });
     cv.style.width = '235px';
     cv.style.height = '235px';
@@ -320,9 +306,10 @@ function reset() {
     mech.position.set(0, 0);
     armorOverlay.visible = armorOwned;
     coreEye.visible = false;
-    gun.y = -18;
-    leftLeg.y = rightLeg.y = 20;
+    gun.y = -10;
+    leftLeg.y = rightLeg.y = 32;
     leftLeg.rotation = rightLeg.rotation = 0;
+    torso.position.set(0, -16);
     updateHUD();
     updateWeaponStats();
 }
@@ -356,12 +343,12 @@ function fire() {
     const a = Math.atan2(closest.y - player.y, closest.x - player.x);
     player.angle = a + Math.PI / 2;
     torso.rotation = player.angle;
-    gun.y = -12;
+    gun.y = -4;
     const num = player.multishot;
     peakVolley = Math.max(peakVolley, num);
     for (let i = 0; i < num; i++) {
         const offset = i - (num - 1) / 2, theta = a + offset * player.spreadAngle;
-        const x = player.x + Math.cos(theta) * 36 - Math.sin(theta) * 10, y = player.y + Math.sin(theta) * 36 + Math.cos(theta) * 10;
+        const x = player.x + Math.cos(theta) * 38 - Math.sin(theta) * 14, y = player.y + Math.sin(theta) * 38 + Math.cos(theta) * 14;
         const v = spr(textures.bullet);
         v.rotation = theta;
         v.position.set(x, y);
@@ -377,7 +364,7 @@ function fire() {
         particle(player.x + Math.cos(a) * 36 - Math.sin(a) * 10, player.y + Math.sin(a) * 36 + Math.cos(a) * 10, '#ffca76', .65);
     for (let i = 0; i < 2; i++) {
         const s = spr(textures.shell);
-        const cx = player.x + Math.cos(a) * 12 + Math.sin(a) * 13, cy = player.y + Math.sin(a) * 12 - Math.cos(a) * 13;
+        const cx = player.x + Math.cos(a) * 8 + Math.sin(a) * 22, cy = player.y + Math.sin(a) * 8 - Math.cos(a) * 22;
         s.position.set(cx, cy);
         effects.addChild(s);
         const aa = a - Math.PI / 2 + rand(-.25, .25);
@@ -515,22 +502,22 @@ function tick(dt) {
         player.y += dy * player.speed * dt;
         player.movePhase += dt * 14;
         const gait = Math.sin(player.movePhase);
-        leftLeg.y = 20 + gait * 6;
-        rightLeg.y = 20 - gait * 6;
-        leftLeg.rotation = gait * .07;
-        rightLeg.rotation = -gait * .07;
+        leftLeg.y = 32 + gait * 6;
+        rightLeg.y = 32 - gait * 6;
+        leftLeg.rotation = gait * .12;
+        rightLeg.rotation = -gait * .12;
         legs.rotation = Math.atan2(dy, dx) + Math.PI / 2;
-        torso.position.y = Math.abs(gait) * .8;
+        torso.position.y = -16 + Math.abs(gait) * 1.2;
     }
     else {
-        leftLeg.y += (20 - leftLeg.y) * Math.min(1, dt * 10);
-        rightLeg.y += (20 - rightLeg.y) * Math.min(1, dt * 10);
+        leftLeg.y += (32 - leftLeg.y) * Math.min(1, dt * 10);
+        rightLeg.y += (32 - rightLeg.y) * Math.min(1, dt * 10);
         leftLeg.rotation *= .78;
         rightLeg.rotation *= .78;
-        torso.position.y *= .8;
+        torso.position.y += (-16 - torso.position.y) * Math.min(1, dt * 10);
     }
     mech.position.set(player.x, player.y);
-    gun.y += (-18 - gun.y) * Math.min(1, dt * 16);
+    gun.y += (-10 - gun.y) * Math.min(1, dt * 16);
     hitFlash = Math.max(0, hitFlash - dt);
     body.tint = hitFlash > 0 ? 0xff6666 : 0xffffff;
     spawnClock -= dt;
