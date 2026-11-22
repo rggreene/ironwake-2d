@@ -91,7 +91,7 @@ var WeaponKit;
     function validateDefinition(w) {
         if (w.muzzle.length !== 8 || w.ejection.length !== 8)
             throw Error(`${w.id}: expected eight per-direction anchors`);
-        if (w.arcDegrees <= 0 || w.arcDegrees > 360 || w.recoilDistance < 0)
+        if (w.arcDegrees <= 0 || w.arcDegrees > 360 || w.recoilDistance < 0 || (w.fireIntervalMultiplier !== undefined && w.fireIntervalMultiplier <= 0))
             throw Error(`${w.id}: invalid weapon configuration`);
         for (const p of [...w.muzzle, ...w.ejection])
             if (!Number.isFinite(p.x) || !Number.isFinite(p.y))
@@ -264,7 +264,7 @@ let facingLower = 0, walkElapsed = 0;
 const directionFor = WeaponKit.direction;
 const forwardBearing = WeaponKit.bearing;
 let visualFacing = 0;
-let currentAim = null;
+const weaponAims = new Map();
 // Each equipped weapon gets its own definition and cooldown. Future slots can be added here.
 const equippedWeapons = [WeaponKit.bastionAutocannon];
 const weaponCooldowns = new Map();
@@ -272,20 +272,22 @@ function currentWeaponStats() {
     return { range: player.range, multishot: player.multishot, spreadAngle: player.spreadAngle,
         damage: player.damage, speed: player.bulletSpeed, penetration: player.penetration };
 }
+function weaponStats(def) {
+    return { ...currentWeaponStats(), ...(def.statOverrides || {}) };
+}
 function updateWeaponAiming() {
-    // v0.9 renders a complete humanoid sprite, so the visible frame must match the selected weapon.
-    // This can be generalized for more slots once separate turret/weapon sprite layers exist.
-    currentAim = null;
+    // Every weapon acquires targets *independently*. Only the primary hand weapon turns
+    // the whole-body artwork; future weapon sprites can use their own facing layers.
+    weaponAims.clear();
     visualFacing = facingLower;
-    const def = equippedWeapons[0];
-    if (!def)
-        return;
-    const target = WeaponKit.pickTarget(player, enemies, facingLower, def, player.range);
-    if (!target)
-        return;
-    currentAim = WeaponKit.solve(player, target, facingLower, def, currentWeaponStats());
-    if (currentAim)
-        visualFacing = currentAim.facing;
+    for (const [index, def] of equippedWeapons.entries()) {
+        const stats = weaponStats(def);
+        const target = WeaponKit.pickTarget(player, enemies, facingLower, def, stats.range);
+        const solution = target ? WeaponKit.solve(player, target, facingLower, def, stats) : null;
+        weaponAims.set(def.id, solution);
+        if (index === 0 && solution)
+            visualFacing = solution.facing;
+    }
 }
 async function buildBastionAtlas() {
     const image = new Image();
@@ -439,7 +441,7 @@ function reset() {
     facingLower = 0;
     visualFacing = 0;
     walkElapsed = 0;
-    currentAim = null;
+    weaponAims.clear();
     weaponCooldowns.clear();
     syncBastionPose(0, 0);
     updateHUD();
@@ -467,7 +469,7 @@ function fireWeapon(def, solution) {
         return false;
     const { angle, muzzle, ejection, shotAngles } = solution;
     peakVolley = Math.max(peakVolley, shotAngles.length);
-    const stats = currentWeaponStats();
+    const stats = weaponStats(def);
     for (const theta of shotAngles) {
         const v = spr(textures[def.projectileTexture]);
         v.rotation = theta;
@@ -502,11 +504,11 @@ function fireEquippedWeapons(dt) {
         let cooldown = (weaponCooldowns.get(def.id) ?? 0) - dt;
         let count = 0;
         while (cooldown <= 0 && count < 6) {
-            if (!fireWeapon(def, currentAim)) {
+            if (!fireWeapon(def, weaponAims.get(def.id) ?? null)) {
                 cooldown = 0;
                 break;
             }
-            cooldown += player.fireRate;
+            cooldown += player.fireRate * (def.fireIntervalMultiplier ?? 1);
             count++;
         }
         weaponCooldowns.set(def.id, count === 6 ? Math.max(0, cooldown) : cooldown);
