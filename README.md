@@ -83,3 +83,12 @@ assets/bastion-concept-reference.png
 The live `index.html` now draws a layered humanoid M14 Bastion with independent animated legs, a compact camera sensor head, visible arms holding a separate autocannon, gun-based recoil/ejection positions, a permanent armor visual layer, and the tiny red BOOP light. Gameplay and save keys remain unchanged from v0.2.
 
 **Development note:** The latest v0.3 editable TypeScript and rebuilt bundled page are in the downloadable `ironwake-2d-v0.3.zip` archive supplied in the ChatGPT project conversation. The repository `src/main.ts` is still the v0.2 source; its v0.3 replacement has not yet been synced here. For running the latest version, use the root `index.html`.
+
+
+## v0.5 — Illustrated directional Bastion
+
+- Live `index.html` embeds the new 8-direction × 4-frame Bastion atlas, so GitHub Pages needs no separate image download.
+- The torso tracks enemies using directional art while the walking legs follow movement direction.
+- Handheld autocannon appearance, recoil, red optical startup light, and permanent visible armor remain.
+- Full PNG atlas and matching TypeScript source are included in the downloadable v0.5 project package.
+- Browser playtesting and Github Pages delivery are not yet independently verified. Generated source art has a visible waist seam at some opposing aim/walk angles; this is a sprite-art limitation to improve in later revisions.
