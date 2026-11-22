@@ -1,13 +1,15 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
+
+#gun-stats{font-size:10px;color:#f0b772;white-space:nowrap;margin-left:auto}#weapon-output{font-size:14px}.weapon-stat{min-width:125px}@media(max-width:720px){#gun-stats{font-size:8px;max-width:49vw;white-space:normal;text-align:right} .bottom{bottom:12px}}
 </style></head><body>
 <div id="game"></div>
-<div id="hud"><div class="hud-top"><div class="brand"><b>IRONWAKE</b><small>OPERATION: IRON DISTRICT · M14 BASTION</small></div><div class="meters"><div class="meter-name">ARMOR <span id="health-label">120 / 120</span></div><div class="meter"><i id="health-fill" class="health"></i></div><div class="meter-name">XP <span id="level-label">LVL 1</span></div><div class="meter"><i id="xp-fill" class="xp"></i></div></div><div class="stat"><small>TIME</small><strong id="time">00:00</strong></div><div class="stat"><small>KILLS</small><strong id="kills">0</strong></div><div class="stat"><small>SALVAGE</small><strong id="salvage">0</strong></div></div><div class="bottom"><div id="hint">WASD / ARROWS MOVE · AUTO TARGET / FIRE · H HANGAR · P PAUSE · M MUTE</div><div id="notice"></div></div></div>
+<div id="hud"><div class="hud-top"><div class="brand"><b>IRONWAKE</b><small>OPERATION: IRON DISTRICT · M14 BASTION</small></div><div class="meters"><div class="meter-name">ARMOR <span id="health-label">120 / 120</span></div><div class="meter"><i id="health-fill" class="health"></i></div><div class="meter-name">XP <span id="level-label">LVL 1</span></div><div class="meter"><i id="xp-fill" class="xp"></i></div></div><div class="stat weapon-stat"><small>FIRE</small><strong id="weapon-output">1.9 rounds/s</strong></div><div class="stat"><small>TIME</small><strong id="time">00:00</strong></div><div class="stat"><small>KILLS</small><strong id="kills">0</strong></div><div class="stat"><small>SALVAGE</small><strong id="salvage">0</strong></div></div><div class="bottom"><div id="hint">WASD / ARROWS MOVE · AUTO TARGET / FIRE · H HANGAR · P PAUSE · M MUTE</div><div id="notice"></div><div id="gun-stats">RATE <span id="weapon-rate">1.9 volleys/s</span> · MULTI <span id="weapon-multi">1</span> · PIERCE <span id="weapon-pierce">0</span></div></div></div>
 <div id="menu" class="overlay"><div class="panel start"><div class="eyebrow">BDG // FORWARD DEPLOYMENT</div><h1>IRON<span>WAKE</span></h1><p>FIRST DEPLOYMENT // BROWSER PROTOTYPE</p><div class="intro">M14 BASTION<br>40 MM KINETIC AUTOCANNON<br>INDUSTRIAL DISTRICT / HOT ZONE</div><button id="start" class="primary">INITIATE DEPLOYMENT <span>●</span></button><button id="hangar-open">ENTER HANGAR</button><small>Move with WASD or arrows. The turret acquires and fires on enemies automatically. Collect blue XP, choose temporary upgrades and salvage armor plating for your next run.</small></div></div>
 <div id="upgrade" class="overlay hidden"><div class="panel"><div class="eyebrow">FIELD CONFIGURATION // NEW LEVEL</div><h2>SELECT COMBAT UPGRADE</h2><div id="upgrade-options" class="cards"></div></div></div>
 <div id="hangar" class="overlay hidden"><div class="panel hangar"><div class="eyebrow">BASTION DEFENSE GROUP // SERVICE BAY 03</div><h2>M14 BASTION // HANGAR</h2><div class="hangar-layout"><div id="hangar-preview"><div id="mech-preview"></div><small>BDG-014 · STANDARD ASSAULT FRAME</small></div><div class="hangar-info"><div class="line"><span>CHASSIS</span><b>M14 BASTION</b></div><div class="line"><span>PRIMARY WEAPON</span><b>40 MM AUTOCANNON</b></div><div class="line"><span>ARMOR PACKAGE</span><b id="armor-status">STANDARD</b></div><div class="line"><span>AVAILABLE SALVAGE</span><b id="hangar-salvage">0</b></div><button id="buy-armor" class="primary">INSTALL REINFORCED ARMOR — 30 SALVAGE</button><div id="hangar-message">Fitting reinforced armor changes the visible torso and shoulder armor in combat.</div><button id="hangar-close">RETURN</button></div></div></div></div>
-<div id="end" class="overlay hidden"><div class="panel start"><div class="eyebrow">MISSION REPORT</div><h2>BASTION DISABLED</h2><p id="end-stats"></p><button id="retry" class="primary">REDEPLOY</button><button id="end-hangar">HANGAR / PERMANENT UPGRADES</button></div></div>
+<div id="end" class="overlay hidden"><div class="panel start"><div class="eyebrow">MISSION REPORT</div><h2>BASTION DISABLED</h2><p id="end-stats" style="white-space:pre-line"></p><button id="retry" class="primary">REDEPLOY</button><button id="end-hangar">HANGAR / PERMANENT UPGRADES</button></div></div>
 <div class="touch" id="touch"><div class="touch-ring"><div id="touch-stick"></div></div><small>DRAG TO MOVE</small></div>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script>"use strict";
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script type="module">"use strict";
 const $ = (id) => { const v = document.getElementById(id); if (!v)
     throw new Error('Missing UI ' + id); return v; };
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
@@ -17,9 +19,9 @@ const dist = (x, y) => Math.sqrt(sq(x) + sq(y));
 const palette = { armor: '#69785c', light: '#96a188', shadow: '#39483e', metal: '#222c30', dark: '#131b20', accent: '#d3a25e', red: '#fd392f', glass: '#162731' };
 let app, world, ground, entities, effects, scene;
 let W = 640, H = 360, last = 0, elapsed = 0, spawnClock = 0, fireClock = 0, screenShake = 0, noticeUntil = 0, paused = false, playing = false, leveling = false, dead = false, hangarFromGame = false, boopTimer = 0;
-let kills = 0, xp = 0, level = 1, salvageRun = 0, xpNeeded = 14, hitFlash = 0;
+let kills = 0, xp = 0, level = 1, salvageRun = 0, xpNeeded = 14, hitFlash = 0, shotsFired = 0, peakProjectilesPerSecond = 0, peakVolley = 1;
 let permanentSalvage = Number(localStorage.getItem('ironwake_salvage') || 0), armorOwned = localStorage.getItem('ironwake_armor') === 'true';
-let player = { x: 0, y: 0, hp: 120, max: 120, speed: 94, angle: 0, fireRate: 0.52, damage: 18, bulletSpeed: 320, range: 280, spread: 0, penetration: 0, armor: 0, magnet: 28, movePhase: 0 };
+let player = { x: 0, y: 0, hp: 120, max: 120, speed: 94, angle: 0, fireRate: 0.52, damage: 18, bulletSpeed: 320, range: 280, multishot: 1, spreadAngle: .085, penetration: 0, armor: 0, magnet: 28, movePhase: 0 };
 const enemies = [];
 const bullets = [];
 const drops = [];
@@ -29,14 +31,18 @@ let mech, body, torso, legs, gun, coreEye, armorOverlay;
 const keys = new Set();
 let touchMove = { x: 0, y: 0 };
 const upgradeCatalog = [
-    { id: 'loading', name: 'AUTOLOADER', info: 'Weapon cycling +22% (faster fire).' },
+    { id: 'loading', name: 'AUTOLOADER', info: 'Weapon cycling +22% (faster fire). Stacks.' },
+    { id: 'overclock', name: 'OVERDRIVE', info: 'Firing interval -32%, damage -10%. Stack for a buzzsaw build.' },
     { id: 'ammo', name: 'HEAVY SLUGS', info: 'Kinetic damage +35%.' },
     { id: 'barrel', name: 'LONG BARREL', info: 'Projectile speed +20%; increased range.' },
     { id: 'armor', name: 'FIELD PLATING', info: '+25 maximum armor; restore 25 armor.' },
     { id: 'servo', name: 'SERVO TUNING', info: 'Move speed +15%.' },
     { id: 'targeting', name: 'TARGET ACQUISITION', info: 'Fire cycle +12%; extended acquisition range.' },
     { id: 'pickup', name: 'SALVAGE MAGNET', info: 'Collect pickups from farther away.' },
-    { id: 'scatter', name: 'TWIN FEED', info: 'Fire one additional offset projectile.' },
+    { id: 'scatter', name: 'MULTI-FEED', info: '+1 projectile per volley. Stacks up to 10.' },
+    { id: 'cluster', name: 'SPREAD CHOKE', info: 'Tighten the multishot grouping by 25%.' },
+    { id: 'pierce', name: 'PENETRATOR SLUGS', info: 'Each slug passes through +1 additional enemy.' },
+    { id: 'stabilizer', name: 'STABILIZED DRIVE', info: 'Fire cycle +15%, projectile speed +10%.' },
 ];
 function rect(ctx, x, y, w, h, c) { ctx.fillStyle = c; ctx.fillRect(x, y, w, h); }
 function pixelCanvas(w, h, draw) { const el = document.createElement('canvas'); el.width = w; el.height = h; const c = el.getContext('2d'); c.imageSmoothingEnabled = false; draw(c); return el; }
@@ -195,9 +201,10 @@ function reset() {
             item.view?.destroy();
         group.length = 0;
     }
-    player = { x: 0, y: 0, hp: armorOwned ? 155 : 120, max: armorOwned ? 155 : 120, speed: 94, angle: 0, fireRate: .52, damage: 18, bulletSpeed: 320, range: 280, spread: 0, penetration: 0, armor: armorOwned ? 2 : 0, magnet: 28, movePhase: 0 };
+    player = { x: 0, y: 0, hp: armorOwned ? 155 : 120, max: armorOwned ? 155 : 120, speed: 94, angle: 0, fireRate: .52, damage: 18, bulletSpeed: 320, range: 280, multishot: 1, spreadAngle: .085, penetration: 0, armor: armorOwned ? 2 : 0, magnet: 28, movePhase: 0 };
     elapsed = spawnClock = fireClock = screenShake = 0;
-    kills = xp = salvageRun = 0;
+    kills = xp = salvageRun = shotsFired = peakProjectilesPerSecond = 0;
+    peakVolley = 1;
     level = 1;
     xpNeeded = 14;
     leveling = dead = false;
@@ -207,6 +214,7 @@ function reset() {
     coreEye.visible = false;
     gun.y = -11;
     updateHUD();
+    updateWeaponStats();
 }
 function spawnEnemy() {
     const danger = 1 + elapsed / 60;
@@ -239,17 +247,23 @@ function fire() {
     player.angle = a + Math.PI / 2;
     torso.rotation = player.angle;
     gun.y = -16;
-    const num = player.spread ? 2 : 1;
+    const num = player.multishot;
+    peakVolley = Math.max(peakVolley, num);
     for (let i = 0; i < num; i++) {
-        const theta = a + (num === 2 ? (i === 0 ? -.065 : .065) : 0);
+        const offset = i - (num - 1) / 2, theta = a + offset * player.spreadAngle;
         const x = player.x + Math.cos(theta) * 31, y = player.y + Math.sin(theta) * 31;
         const v = spr(textures.bullet);
         v.rotation = theta;
         v.position.set(x, y);
         effects.addChild(v);
-        bullets.push({ x, y, vx: Math.cos(theta) * player.bulletSpeed, vy: Math.sin(theta) * player.bulletSpeed, damage: player.damage, life: 1.25, view: v });
+        bullets.push({ x, y, vx: Math.cos(theta) * player.bulletSpeed, vy: Math.sin(theta) * player.bulletSpeed, damage: player.damage, life: Math.max(0.5, player.range / player.bulletSpeed), view: v, remaining: player.penetration + 1, hits: new Set() });
+        shotsFired++;
+        if (bullets.length > 650) {
+            const oldest = bullets.shift();
+            oldest.view.destroy();
+        }
     }
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < Math.min(3, num); i++)
         particle(player.x + Math.cos(a) * 30, player.y + Math.sin(a) * 30, '#ffca76', .65);
     for (let i = 0; i < 2; i++) {
         const s = spr(textures.shell);
@@ -275,7 +289,7 @@ function enemyDeath(e) {
     e.view.destroy();
     enemies.splice(enemies.indexOf(e), 1);
 }
-function levelUp() { level++; xp -= xpNeeded; xpNeeded = Math.floor(xpNeeded * 1.38 + 4); leveling = true; $('upgrade').classList.remove('hidden'); const options = [...upgradeCatalog].sort(() => Math.random() - .5).slice(0, 3); const node = $('upgrade-options'); node.replaceChildren(); for (const u of options) {
+function levelUp() { level++; xp -= xpNeeded; xpNeeded = Math.floor(xpNeeded * 1.38 + 4); leveling = true; $('upgrade').classList.remove('hidden'); const options = [...upgradeCatalog].filter(u => u.id !== 'scatter' || player.multishot < 10).sort(() => Math.random() - .5).slice(0, 3); const node = $('upgrade-options'); node.replaceChildren(); for (const u of options) {
     const button = document.createElement('button');
     button.className = 'card';
     const title = document.createElement('b');
@@ -287,44 +301,70 @@ function levelUp() { level++; xp -= xpNeeded; xpNeeded = Math.floor(xpNeeded * 1
         levelUp(); };
     node.appendChild(button);
 } playSound(680, .17, 'sine', .12); }
-function applyUpgrade(id) { switch (id) {
-    case 'loading':
-        player.fireRate *= .78;
-        break;
-    case 'ammo':
-        player.damage *= 1.35;
-        break;
-    case 'barrel':
-        player.bulletSpeed *= 1.2;
-        player.range += 40;
-        break;
-    case 'armor':
-        player.max += 25;
-        player.hp = Math.min(player.max, player.hp + 25);
-        break;
-    case 'servo':
-        player.speed *= 1.15;
-        break;
-    case 'targeting':
-        player.fireRate *= .88;
-        player.range += 60;
-        break;
-    case 'pickup':
-        player.magnet += 28;
-        break;
-    case 'scatter':
-        player.spread = 1;
-        break;
-} notice('INSTALLED // ' + id.toUpperCase()); }
+function applyUpgrade(id) {
+    switch (id) {
+        case 'loading':
+            player.fireRate = Math.max(.045, player.fireRate * .78);
+            break;
+        case 'overclock':
+            player.fireRate = Math.max(.045, player.fireRate * .68);
+            player.damage *= .9;
+            break;
+        case 'ammo':
+            player.damage *= 1.35;
+            break;
+        case 'barrel':
+            player.bulletSpeed *= 1.2;
+            player.range += 40;
+            break;
+        case 'armor':
+            player.max += 25;
+            player.hp = Math.min(player.max, player.hp + 25);
+            break;
+        case 'servo':
+            player.speed *= 1.15;
+            break;
+        case 'targeting':
+            player.fireRate = Math.max(.045, player.fireRate * .88);
+            player.range += 60;
+            break;
+        case 'pickup':
+            player.magnet += 28;
+            break;
+        case 'scatter':
+            player.multishot = Math.min(10, player.multishot + 1);
+            break;
+        case 'cluster':
+            player.spreadAngle = Math.max(.018, player.spreadAngle * .75);
+            break;
+        case 'pierce':
+            player.penetration = Math.min(8, player.penetration + 1);
+            break;
+        case 'stabilizer':
+            player.fireRate = Math.max(.045, player.fireRate * .85);
+            player.bulletSpeed *= 1.1;
+            break;
+    }
+    updateWeaponStats();
+    notice('INSTALLED // ' + id.toUpperCase());
+}
+function updateWeaponStats() {
+    const rounds = player.multishot / player.fireRate;
+    peakProjectilesPerSecond = Math.max(peakProjectilesPerSecond, rounds);
+    $('weapon-rate').textContent = (1 / player.fireRate).toFixed(1) + ' volleys/s';
+    $('weapon-multi').textContent = String(player.multishot);
+    $('weapon-pierce').textContent = String(player.penetration);
+    $('weapon-output').textContent = rounds.toFixed(1) + ' rounds/s';
+}
 function notice(s) { $('notice').textContent = s; noticeUntil = elapsed + 2.5; }
 function damagePlayer(n) { if (dead)
     return; player.hp = Math.max(0, player.hp - Math.max(1, n - player.armor)); hitFlash = .22; screenShake = 5; playSound(130, .14, 'square', .09); if (player.hp <= 0)
     gameOver(); }
-function gameOver() { dead = true; playing = false; permanentSalvage += salvageRun; save(); $('end-stats').textContent = `Survived ${formatTime(elapsed)} · ${kills} kills · ${salvageRun} salvage recovered. The recovered salvage is available in the hangar.`; $('end').classList.remove('hidden'); }
+function gameOver() { dead = true; playing = false; leveling = false; $('upgrade').classList.add('hidden'); permanentSalvage += salvageRun; save(); $('end-stats').textContent = `Survived ${formatTime(elapsed)} · ${kills} kills · ${salvageRun} salvage recovered.\n${shotsFired} rounds fired · peak ${peakProjectilesPerSecond.toFixed(1)} rounds/s · ${peakVolley} projectiles/volley.\nRecovered salvage is available in the hangar.`; $('end').classList.remove('hidden'); }
 function formatTime(t) { return `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(Math.floor(t % 60)).padStart(2, '0')}`; }
 function updateHUD() { $('health-label').textContent = `${Math.ceil(player.hp)} / ${player.max}`; $('health-fill').style.width = `${100 * player.hp / player.max}%`; $('xp-fill').style.width = `${100 * xp / xpNeeded}%`; $('level-label').textContent = `LVL ${level}`; $('kills').textContent = String(kills); $('salvage').textContent = String(salvageRun); $('time').textContent = formatTime(elapsed); }
 function save() { localStorage.setItem('ironwake_salvage', String(permanentSalvage)); localStorage.setItem('ironwake_armor', String(armorOwned)); }
-function openHangar(fromGame = false) { hangarFromGame = fromGame; $('hangar-salvage').textContent = String(permanentSalvage); $('armor-status').textContent = armorOwned ? 'REINFORCED' : 'STANDARD'; const button = $('buy-armor'); button.disabled = armorOwned || permanentSalvage < 30; button.textContent = armorOwned ? 'REINFORCED ARMOR INSTALLED' : 'INSTALL REINFORCED ARMOR — 30 SALVAGE'; renderPreview(); $('hangar').classList.remove('hidden'); }
+function openHangar(fromGame = false) { hangarFromGame = fromGame; $('end').classList.add('hidden'); $('menu').classList.add('hidden'); $('upgrade').classList.add('hidden'); $('hangar-salvage').textContent = String(permanentSalvage); $('armor-status').textContent = armorOwned ? 'REINFORCED' : 'STANDARD'; const button = $('buy-armor'); button.disabled = armorOwned || permanentSalvage < 30; button.textContent = armorOwned ? 'REINFORCED ARMOR INSTALLED' : 'INSTALL REINFORCED ARMOR — 30 SALVAGE'; renderPreview(); $('hangar').classList.remove('hidden'); }
 let audioContext = null, muted = false;
 function playSound(freq, duration, type = 'sine', gain = .08) { if (muted)
     return; try {
@@ -383,10 +423,14 @@ function tick(dt) {
             spawnEnemy();
     }
     fireClock -= dt;
-    if (fireClock <= 0) {
+    let volleys = 0;
+    while (fireClock <= 0 && volleys < 6) {
         fireClock += player.fireRate;
         fire();
+        volleys++;
     }
+    if (volleys === 6)
+        fireClock = Math.max(0, fireClock);
     for (let i = enemies.length - 1; i >= 0; i--) {
         const e = enemies[i];
         const x = player.x - e.x, y = player.y - e.y, d = Math.max(.001, dist(x, y));
@@ -409,13 +453,19 @@ function tick(dt) {
         let destroyed = false;
         for (let j = enemies.length - 1; j >= 0; j--) {
             const e = enemies[j];
+            if (b.hits.has(e))
+                continue;
             if (sq(e.x - b.x) + sq(e.y - b.y) < sq(e.radius + 4)) {
+                b.hits.add(e);
                 e.hp -= b.damage;
                 particle(b.x, b.y, '#ffa66b');
                 if (e.hp <= 0)
                     enemyDeath(e);
-                destroyed = true;
-                break;
+                b.remaining--;
+                if (b.remaining <= 0) {
+                    destroyed = true;
+                    break;
+                }
             }
         }
         if (destroyed || b.life <= 0) {
@@ -501,7 +551,15 @@ async function init() {
     $('hangar-open').onclick = () => openHangar(false);
     $('end-hangar').onclick = () => openHangar(false);
     $('hangar-close').onclick = () => { $('hangar').classList.add('hidden'); if (armorOwned)
-        armorOverlay.visible = true; };
+        armorOverlay.visible = true; if (dead) {
+        $('end').classList.remove('hidden');
+    }
+    else if (!playing) {
+        $('menu').classList.remove('hidden');
+    }
+    else {
+        paused = false;
+    } };
     $('buy-armor').onclick = () => { if (!armorOwned && permanentSalvage >= 30) {
         armorOwned = true;
         permanentSalvage -= 30;
@@ -522,8 +580,7 @@ async function init() {
             openHangar(true);
         }
         else {
-            $('hangar').classList.add('hidden');
-            paused = false;
+            $('hangar-close').click();
         }
     } if (k === 'm')
         muted = !muted; });
