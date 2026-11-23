@@ -452,7 +452,20 @@ function updateWeaponAiming() {
 async function buildBastionAtlas() {
     const image = new Image();
     image.src = BASTION_ATLAS_URL;
-    await image.decode();
+    try { await image.decode(); } catch (error) {
+      console.warn('Bastion image decode failed; using procedural art:',error);
+      const fallback = pixelCanvas(BASTION_W*8, BASTION_H*4, c => {
+        for(let row=0; row<4; row++) for(let dir=0; dir<8; dir++) {
+          const x=dir*BASTION_W,y=row*BASTION_H;
+          c.drawImage(textures.leftLeg.__sourceCanvas,x+4,y+39,28,51);
+          c.drawImage(textures.rightLeg.__sourceCanvas,x+31,y+39,28,51);
+          c.drawImage(textures.torso.__sourceCanvas,x+7,y+1,50,57);
+          c.drawImage(textures.gun.__sourceCanvas,x+36,y+8,22,51);
+        }
+      });
+      image.src=fallback.toDataURL('image/png');
+      await image.decode();
+    }
     if (image.naturalWidth !== BASTION_W * 8 || image.naturalHeight !== BASTION_H * 4)
         throw new Error('Invalid Bastion sprite atlas');
     fullFrames = [];
@@ -763,36 +776,20 @@ function makeTextures() {
     textures.tile = textures.tiles[0];
 }
 async function buildCarrionAtlas() {
-    // Industrial enemy visuals are replaceable art assets, not gameplay data.
-    // Keep the previous atlas as a graceful fallback for mobile / partially cached deployments.
-    const kinds = ['worker', 'tank', 'light', 'heavy', 'prototype', 'boss'];
-    for (const kind of kinds) {
-        const image = new Image();
-        image.src = CARRION_ATLAS_URLS[kind];
-        await image.decode();
-        if (image.naturalWidth !== 384 || image.naturalHeight !== 96)
-            throw new Error('Invalid original enemy atlas for ' + kind);
-        const frames = [];
-        for (let frame = 0; frame < 4; frame++)
-            frames.push(tex(96, 96, c => c.drawImage(image, frame * 96, 0, 96, 96, 0, 0, 96, 96)));
-        textures.enemyFrames[kind] = frames;
-        textures[kind] = frames[0];
-    }
-    const wreck = new Image();
-    wreck.src = CARRION_ATLAS_URLS.wrecks;
-    await wreck.decode();
-    if (wreck.naturalWidth !== 576 || wreck.naturalHeight !== 96)
-        throw new Error('Invalid original enemy wreck atlas');
-    for (let i = 0; i < kinds.length; i++)
-        textures.wreckTypes[kinds[i]] = tex(96, 96, c => c.drawImage(wreck, i * 96, 0, 96, 96, 0, 0, 96, 96));
-    textures.wreck = textures.wreckTypes.worker;
-    const turretImage = new Image();
-    turretImage.src = CARRION_ATLAS_URLS.tank_turret;
-    await turretImage.decode();
-    if (turretImage.naturalWidth !== 96 || turretImage.naturalHeight !== 96)
-        throw new Error('Invalid Wardog turret texture');
-    textures.tankTurret = tex(96, 96, c => c.drawImage(turretImage, 0, 0));
-    // All four new atlases use 128px registered cells and preserve animation order.
+  // Fallback sprites first. Optional image failures must never block deployment.
+  const fallbackRole={worker:'scout',tank:'brute',light:'raider',heavy:'brute',prototype:'raider',boss:'brute'};
+  const allKinds=['worker','tank','light','heavy','prototype','boss'];
+  for(const kind of allKinds){
+    const backup=textures.enemyFrames[fallbackRole[kind]];
+    textures.enemyFrames[kind]=[backup[0],backup[1],backup[0],backup[1]];
+    textures[kind]=backup[0];
+    textures.wreckTypes[kind]=textures.wreckTypes[fallbackRole[kind]];
+  }
+  textures.wreck=textures.wreckTypes.worker;
+  textures.tankTurret=tex(96,96,c=>{
+    rect(c,39,38,18,18,'#343e3f');rect(c,42,30,12,24,'#58645c');rect(c,46,10,4,32,'#a6a59a');
+  });
+  // All four new atlases use 128px registered cells and preserve animation order.
     // Upload these as individual PNGs: prevents oversized index.html and stale-asset collisions.
     // Rare units get their own experimental chassis and mobile armor art, not scaled common enemies.
     const eliteKinds = ['prototype', 'boss'];
