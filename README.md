@@ -25,3 +25,14 @@ Run `npx tsc && node test-elite-v21.cjs && node test-roster.cjs && node test-for
 ## v2.3 — Kinetic attack animation pass
 
 Visual-only combat feedback: the Bastion now has short recoil and an aligned muzzle flash; the Wardog's turret recoils briefly; enemy projectiles and unlocked support weapons create directional muzzle flashes; the Goliath's windup now pulses visually during its existing warning; weapon impacts get a secondary spark. Effects have a fixed 64-flash budget, expire automatically, and reset between runs. No modifications to weapon damage, fire rate, enemy health, spawn pacing, boss cadence, or save keys. The current browser build is the versioned `app-v23.js` loaded by `index.html`. The downloadable v2.3 archive includes the updated editable TypeScript and regression tests.
+
+
+## v2.4 — Permanent requisitions shop
+
+The hangar now has a requisitions terminal with seven permanent upgrade lines: reinforced composite armor, frame reinforcement, autoloader, ballistic calibration, actuator retrofit, salvage recovery, and acquisition optics. Most upgrades have three ranks with increasing salvage prices. Purchases are available before and after runs, not during live combat; bonuses apply at the next deployment.
+
+Progress saves in `ironwake_requisitions_v1`. The existing `ironwake_salvage` and `ironwake_armor` keys are retained for backward compatibility. Armor already owned through the old single-button shop stays purchased.
+
+The deployed game uses three files: `index.html`, `app-v24.js` and `atlas-v24.js`. The split keeps each JavaScript file reasonably sized and makes cache versioning easier. The full editable v2.4 TypeScript project, assets, and `test-shop-v24.cjs` are available in the release ZIP from the ChatGPT conversation. The repository's older `src/main.ts` is not yet synchronized with the deployed v2.4 JavaScript.
+
+The requisitions tests cover legacy armor migration, ranks and prices, salvage deduction, saves, bonuses, and purchase gating. Local TypeScript compilation and current forward-fire and support-weapon tests passed. A full browser playtest is still pending.
