@@ -128,3 +128,10 @@ The v0.9 ZIP in the ChatGPT conversation contains the current editable TypeScrip
 The Bastion's handheld autocannon now fires continuously in the eight-direction chassis facing, even if no enemy is visible. It no longer turns to track nearby targets and no longer uses a front-arc target filter. Multishot still fans out around the forward heading, and the reusable WeaponKit continues to support independently targeted future weapons. No changes to permanent saves or upgrade purchases. The live `index.html` is self-contained, including the Bastion sprite atlas.
 
 The `iw-v10` archive from the project conversation includes editable TypeScript and the direction test suite.
+
+
+## v1.1 — Battlefield visual upgrade
+
+This pass keeps the M14 Bastion's eight-direction straight-ahead autocannon and existing build progression. The three enemies now have distinct pixel-art silhouettes and simple two-frame movement, with wreck visuals matching each type. The arena uses eight deterministic industrial concrete variants (road lanes, hazard paint, grates, access panels, loading bays and battle wear). XP, salvage, bullets, impacts, and explosion debris have clearer pixel detailing. Visual texture generation stays runtime-driven for mobile browser compatibility.
+
+This release does **not** add new weapons yet. The v1.1 editable TypeScript and tests are included in the downloadable release ZIP supplied in ChatGPT; the deployed root `index.html` is the authoritative browser build. Legacy weapon tests asserting retired torso-tracking behavior are superseded by the forward-fire tests.
