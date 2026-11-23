@@ -1,16 +1,58 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v1.1</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v1.2</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
 
 #gun-stats{font-size:10px;color:#f0b772;white-space:nowrap;margin-left:auto}#weapon-output{font-size:14px}.weapon-stat{min-width:125px}@media(max-width:720px){#gun-stats{font-size:8px;max-width:49vw;white-space:normal;text-align:right} .bottom{bottom:12px}}
-</style></head><body>
+#director-toggle{position:fixed;right:12px;bottom:12px;z-index:6;background:#202f34e8;font-size:10px;padding:9px 11px;border-color:#546765}#director-panel{position:fixed;right:12px;bottom:54px;z-index:9;width:min(340px,calc(100vw - 24px));max-height:min(72vh,560px);overflow:auto;background:#111b20f5;border:1px solid #82928a;box-shadow:0 6px 25px #0009;padding:15px;font:11px ui-monospace,monospace;color:#dde8df;touch-action:pan-y}.director-header{display:flex;justify-content:space-between;align-items:center}.director-header button{padding:5px;margin:0}.director-row{display:grid;grid-template-columns:1fr auto;gap:5px;margin:12px 0}.director-row input{grid-column:1/3;width:100%;accent-color:#d99d70}.director-assist{display:block;margin:10px 0}#director-preset{background:#25333a;color:#fff;padding:5px;border:1px solid #64726d}#director-stats{color:#dcb587;border-top:1px solid #54625c;padding-top:8px}#director-panel p{font-size:10px}</style></head><body>
 <div id="game"></div>
 <div id="hud"><div class="hud-top"><div class="brand"><b>IRONWAKE</b><small>OPERATION: IRON DISTRICT · M14 BASTION</small></div><div class="meters"><div class="meter-name">ARMOR <span id="health-label">120 / 120</span></div><div class="meter"><i id="health-fill" class="health"></i></div><div class="meter-name">XP <span id="level-label">LVL 1</span></div><div class="meter"><i id="xp-fill" class="xp"></i></div></div><div class="stat weapon-stat"><small>FIRE</small><strong id="weapon-output">1.9 rounds/s</strong></div><div class="stat"><small>TIME</small><strong id="time">00:00</strong></div><div class="stat"><small>KILLS</small><strong id="kills">0</strong></div><div class="stat"><small>SALVAGE</small><strong id="salvage">0</strong></div></div><div class="bottom"><div id="hint">WASD / ARROWS MOVE · AUTO FIRE FORWARD · H HANGAR · P PAUSE · M MUTE</div><div id="notice"></div><div id="gun-stats">RATE <span id="weapon-rate">1.9 volleys/s</span> · MULTI <span id="weapon-multi">1</span> · PIERCE <span id="weapon-pierce">0</span></div></div></div>
 <div id="menu" class="overlay"><div class="panel start"><div class="eyebrow">BDG // FORWARD DEPLOYMENT</div><h1>IRON<span>WAKE</span></h1><p>FIRST DEPLOYMENT // INDUSTRIAL FIELD REWORK</p><div class="intro">M14 BASTION<br>40 MM KINETIC AUTOCANNON<br>INDUSTRIAL DISTRICT / HOT ZONE</div><button id="start" class="primary">INITIATE DEPLOYMENT <span>●</span></button><button id="hangar-open">ENTER HANGAR</button><small>Move with WASD or arrows. The autocannon fires straight ahead in your current movement-facing direction. Collect blue XP, choose temporary upgrades and salvage armor plating for your next run.</small></div></div>
 <div id="upgrade" class="overlay hidden"><div class="panel"><div class="eyebrow">FIELD CONFIGURATION // NEW LEVEL</div><h2>SELECT COMBAT UPGRADE</h2><div id="upgrade-options" class="cards"></div></div></div>
 <div id="hangar" class="overlay hidden"><div class="panel hangar"><div class="eyebrow">BASTION DEFENSE GROUP // SERVICE BAY 03</div><h2>M14 BASTION // HANGAR</h2><div class="hangar-layout"><div id="hangar-preview"><div id="mech-preview"></div><small>BDG-014 · STANDARD ASSAULT FRAME</small></div><div class="hangar-info"><div class="line"><span>CHASSIS</span><b>M14 BASTION</b></div><div class="line"><span>PRIMARY WEAPON</span><b>40 MM AUTOCANNON</b></div><div class="line"><span>ARMOR PACKAGE</span><b id="armor-status">STANDARD</b></div><div class="line"><span>AVAILABLE SALVAGE</span><b id="hangar-salvage">0</b></div><button id="buy-armor" class="primary">INSTALL REINFORCED ARMOR — 30 SALVAGE</button><div id="hangar-message">Fitting reinforced armor changes the visible torso and shoulder armor in combat.</div><button id="hangar-close">RETURN</button></div></div></div></div>
 <div id="end" class="overlay hidden"><div class="panel start"><div class="eyebrow">MISSION REPORT</div><h2>BASTION DISABLED</h2><p id="end-stats" style="white-space:pre-line"></p><button id="retry" class="primary">REDEPLOY</button><button id="end-hangar">HANGAR / PERMANENT UPGRADES</button></div></div>
+<button id="director-toggle" aria-label="Open difficulty tuning" title="Difficulty tuning (F3)">⚙ DIFFICULTY</button>
+<div id="director-panel" class="hidden" aria-label="Difficulty testing controls"><div class="director-header"><b>THREAT DIRECTOR // TEST PANEL</b><button id="director-close" aria-label="Close tuning panel">✕</button></div><p>Live tuning — F3 toggles. Does not affect permanent progression.</p><label>Difficulty preset <select id="director-preset"><option value="recruit">Recruit</option><option value="standard">Standard</option><option value="veteran">Veteran</option><option value="hellfront">Hellfront</option></select></label><div id="director-controls"></div><label class="director-assist"><input id="director-assist" type="checkbox" checked> Brief pressure relief after heavy damage</label><div id="director-stats"></div><button id="director-reset">RESET TUNING</button></div>
 <div class="touch" id="touch"><div class="touch-ring"><div id="touch-stick"></div></div><small>DRAG TO MOVE</small></div>
 <script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script type="module">
 "use strict";
+/** IRONWAKE v1.2: deterministic, performance-bounded threat scheduling. */
+var ThreatDirector;
+(function (ThreatDirector) {
+    ThreatDirector.defaults = { preset: 'standard', intensity: 1, hp: 1, damage: 1, speed: 1, scout: 1, raider: 1, brute: 1, assist: true };
+    ThreatDirector.profiles = {
+        recruit: { density: .72, hp: .85, damage: .65, speed: .91 },
+        standard: { density: 1, hp: 1, damage: 1, speed: 1 },
+        veteran: { density: 1.28, hp: 1.20, damage: 1.3, speed: 1.07 },
+        hellfront: { density: 1.72, hp: 1.40, damage: 1.6, speed: 1.12 }
+    };
+    ThreatDirector.clamp = (n, a, b) => Math.min(b, Math.max(a, n));
+    function threat(elapsed, t) { return ThreatDirector.clamp((8 + elapsed * .16 + elapsed * elapsed * .00016) * ThreatDirector.profiles[t.preset].density * t.intensity, 4, 250); }
+    ThreatDirector.threat = threat;
+    function cap(elapsed, t) { return Math.floor(ThreatDirector.clamp((38 + elapsed * .50) * ThreatDirector.profiles[t.preset].density * t.intensity, 25, 320)); }
+    ThreatDirector.cap = cap;
+    function weights(elapsed, t) {
+        const minute = elapsed / 60;
+        const scout = ThreatDirector.clamp(.91 - minute * .055, .39, .95) * t.scout;
+        const brute = (minute < 1 ? 0 : ThreatDirector.clamp((minute - 1) * .035, 0, .20)) * t.brute;
+        const raider = (minute < .33 ? 0 : ThreatDirector.clamp(.10 + minute * .035, .1, .43)) * t.raider;
+        return { scout, raider, brute };
+    }
+    ThreatDirector.weights = weights;
+    function choose(elapsed, t, roll) {
+        const w = weights(elapsed, t), sum = w.scout + w.raider + w.brute;
+        if (sum <= 0)
+            return 'scout';
+        const n = ThreatDirector.clamp(roll, 0, .999999) * sum;
+        return n < w.scout ? 'scout' : n < w.scout + w.raider ? 'raider' : 'brute';
+    }
+    ThreatDirector.choose = choose;
+    ThreatDirector.cost = { scout: 1, raider: 2.6, brute: 6.5 };
+    function budgetPerSecond(elapsed, t, recentDamage) {
+        const assist = t.assist && recentDamage > 0 ? ThreatDirector.clamp(1 - recentDamage * .003, .72, 1) : 1;
+        return ThreatDirector.clamp(threat(elapsed, t) / 8 * 1.25 * assist, .65, 8);
+    }
+    ThreatDirector.budgetPerSecond = budgetPerSecond;
+    function multipliers(t) { const p = ThreatDirector.profiles[t.preset]; return { hp: t.hp * p.hp, damage: t.damage * p.damage, speed: t.speed * p.speed }; }
+    ThreatDirector.multipliers = multipliers;
+})(ThreatDirector || (ThreatDirector = {}));
 /** IRONWAKE weapon geometry and targeting. Pure game math: no PIXI or DOM dependency. */
 var WeaponKit;
 (function (WeaponKit) {
@@ -127,6 +169,8 @@ const palette = { armor: '#69785c', light: '#96a188', shadow: '#39483e', metal: 
 let app, world, ground, entities, effects, scene;
 let W = 640, H = 360, last = 0, elapsed = 0, spawnClock = 0, fireClock = 0, screenShake = 0, noticeUntil = 0, paused = false, playing = false, leveling = false, dead = false, hangarFromGame = false, boopTimer = 0;
 let kills = 0, xp = 0, level = 1, salvageRun = 0, xpNeeded = 14, hitFlash = 0, shotsFired = 0, peakProjectilesPerSecond = 0, peakVolley = 1;
+let directorTuning = { ...ThreatDirector.defaults };
+let spawnBudget = 0, recentDamage = 0, pressureNotice = 0;
 let permanentSalvage = Number(localStorage.getItem('ironwake_salvage') || 0), armorOwned = localStorage.getItem('ironwake_armor') === 'true';
 let player = { x: 0, y: 0, hp: 120, max: 120, speed: 94, angle: 0, fireRate: 0.52, damage: 18, bulletSpeed: 320, range: 280, multishot: 1, spreadAngle: .085, penetration: 0, armor: 0, magnet: 28, movePhase: 0 };
 const enemies = [];
@@ -627,6 +671,8 @@ function reset() {
     }
     player = { x: 0, y: 0, hp: armorOwned ? 155 : 120, max: armorOwned ? 155 : 120, speed: 94, angle: 0, fireRate: .52, damage: 18, bulletSpeed: 320, range: 280, multishot: 1, spreadAngle: .085, penetration: 0, armor: armorOwned ? 2 : 0, magnet: 28, movePhase: 0 };
     elapsed = spawnClock = fireClock = screenShake = 0;
+    spawnBudget = 0;
+    recentDamage = 0;
     kills = xp = salvageRun = shotsFired = peakProjectilesPerSecond = 0;
     peakVolley = 1;
     level = 1;
@@ -644,17 +690,112 @@ function reset() {
     updateHUD();
     updateWeaponStats();
 }
-function spawnEnemy() {
-    const danger = 1 + elapsed / 60;
-    const kind = elapsed > 58 && Math.random() < .12 ? 'brute' : elapsed > 18 && Math.random() < .3 ? 'raider' : 'scout';
+function spawnEnemy(kind) {
     const angle = rand(0, Math.PI * 2), r = Math.max(W, H) / 2 + 65;
     const x = player.x + Math.cos(angle) * r, y = player.y + Math.sin(angle) * r;
-    const stats = kind === 'scout' ? [28, 45, 9] : kind === 'raider' ? [65, 29, 13] : [155, 18, 18];
-    const hp = stats[0] * (1 + elapsed / 250), view = spr(textures.enemyFrames[kind][0]);
+    const stats = kind === 'scout' ? [28, 58, 9] : kind === 'raider' ? [65, 34, 13] : [155, 20, 18];
+    const scale = ThreatDirector.multipliers(directorTuning);
+    // HP grows gently so upgrades remain rewarding rather than scaling against DPS.
+    const hp = stats[0] * scale.hp * (1 + elapsed / 850), view = spr(textures.enemyFrames[kind][0]);
     view.position.set(x, y);
     view.rotation = 0;
     entities.addChild(view);
-    enemies.push({ x, y, hp, max: hp, speed: stats[1] * (1 + elapsed / 450), radius: stats[2], kind, view, attack: 0, seed: rand(0, 10), animation: 0 });
+    enemies.push({ x, y, hp, max: hp, speed: stats[1] * scale.speed, radius: stats[2], kind, view, attack: rand(.2, .8), seed: rand(0, 10), animation: 0, weave: rand(0, Math.PI * 2) });
+}
+function updateSpawnDirector(dt) {
+    recentDamage = Math.max(0, recentDamage - dt * 4);
+    const cap = ThreatDirector.cap(elapsed, directorTuning);
+    spawnBudget = Math.min(24, spawnBudget + ThreatDirector.budgetPerSecond(elapsed, directorTuning, recentDamage) * dt);
+    if (enemies.length >= cap)
+        return;
+    let count = 0;
+    while (spawnBudget >= 1 && enemies.length < cap && count < 8) {
+        const kind = ThreatDirector.choose(elapsed, directorTuning, Math.random());
+        const price = ThreatDirector.cost[kind];
+        if (spawnBudget < price) {
+            // Allow low-cost scouts rather than stalling the whole director.
+            if (kind !== 'scout' && spawnBudget >= 1) {
+                spawnEnemy('scout');
+                spawnBudget -= 1;
+                count++;
+                continue;
+            }
+            break;
+        }
+        spawnEnemy(kind);
+        spawnBudget -= price;
+        count++;
+    }
+}
+// Spatial hashing keeps Marauder separation linear in typical swarm scenarios.
+const HASH_CELL = 45;
+function enemyGrid() {
+    const grid = new Map();
+    for (const e of enemies) {
+        const cx = Math.floor(e.x / HASH_CELL), cy = Math.floor(e.y / HASH_CELL), key = cx + ',' + cy;
+        let list = grid.get(key);
+        if (!list) {
+            list = [];
+            grid.set(key, list);
+        }
+        list.push(e);
+    }
+    return grid;
+}
+function moveEnemies(dt) {
+    const grid = enemyGrid(), damageScale = ThreatDirector.multipliers(directorTuning).damage;
+    for (let i = enemies.length - 1; i >= 0; i--) {
+        const e = enemies[i], dx = player.x - e.x, dy = player.y - e.y, d = Math.max(.001, Math.hypot(dx, dy));
+        let vx = dx / d, vy = dy / d;
+        if (e.kind === 'scout') {
+            // Lightweight predictable lateral weave: deterministic per-enemy phase, no teleporting.
+            const wave = Math.sin(elapsed * 3.1 + e.weave) * .25;
+            vx += -dy / d * wave;
+            vy += dx / d * wave;
+        }
+        else if (e.kind === 'raider') {
+            let sx = 0, sy = 0, neighbors = 0;
+            const cx = Math.floor(e.x / HASH_CELL), cy = Math.floor(e.y / HASH_CELL);
+            for (let gx = cx - 1; gx <= cx + 1; gx++)
+                for (let gy = cy - 1; gy <= cy + 1; gy++) {
+                    const nearby = grid.get(gx + ',' + gy);
+                    if (!nearby)
+                        continue;
+                    for (const other of nearby) {
+                        if (other === e || other.kind !== 'raider')
+                            continue;
+                        const ox = e.x - other.x, oy = e.y - other.y, dist2 = ox * ox + oy * oy;
+                        if (dist2 > 1 && dist2 < 900) {
+                            const inv = 1 / Math.sqrt(dist2);
+                            sx += ox * inv;
+                            sy += oy * inv;
+                            neighbors++;
+                        }
+                    }
+                }
+            if (neighbors) {
+                vx += sx / neighbors * .38;
+                vy += sy / neighbors * .38;
+            }
+        }
+        const len = Math.max(.001, Math.hypot(vx, vy));
+        vx /= len;
+        vy /= len;
+        e.x += vx * e.speed * dt;
+        e.y += vy * e.speed * dt;
+        e.view.position.set(e.x, e.y);
+        e.animation += dt * (e.kind === 'scout' ? 9 : e.kind === 'raider' ? 6 : 3.8);
+        e.view.texture = textures.enemyFrames[e.kind][Math.floor(e.animation + e.seed) % 2];
+        e.view.rotation = 0;
+        e.view.tint = 0xffffff;
+        e.attack -= dt;
+        const strikeDistance = e.radius + 12;
+        if (d < strikeDistance && e.attack <= 0) {
+            const raw = e.kind === 'brute' ? 20 : e.kind === 'raider' ? 11 : 6;
+            e.attack = e.kind === 'brute' ? 1.4 : e.kind === 'raider' ? 1.1 : .9;
+            damagePlayer(raw * damageScale);
+        }
+    }
 }
 function dropAt(x, y, kind, value = 1) { const view = spr(textures[kind]); view.position.set(x, y); effects.addChild(view); drops.push({ x, y, kind, value, view, life: 0 }); }
 function particle(x, y, color, power = 1) { const v = gfxCircle(rand(.7, 1.8) * power, color); effects.addChild(v); v.position.set(x, y); const a = rand(0, Math.PI * 2), speed = rand(20, 90); particles.push({ x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: rand(.2, .55), max: .55, view: v }); }
@@ -794,7 +935,7 @@ function updateWeaponStats() {
 }
 function notice(s) { $('notice').textContent = s; noticeUntil = elapsed + 2.5; }
 function damagePlayer(n) { if (dead)
-    return; player.hp = Math.max(0, player.hp - Math.max(1, n - player.armor)); hitFlash = .22; screenShake = 5; playSound(130, .14, 'square', .09); if (player.hp <= 0)
+    return; const applied = Math.max(1, n - player.armor); recentDamage = Math.min(90, recentDamage + applied); player.hp = Math.max(0, player.hp - applied); hitFlash = .22; screenShake = 5; playSound(130, .14, 'square', .09); if (player.hp <= 0)
     gameOver(); }
 function gameOver() { dead = true; playing = false; leveling = false; $('upgrade').classList.add('hidden'); permanentSalvage += salvageRun; save(); $('end-stats').textContent = `Survived ${formatTime(elapsed)} · ${kills} kills · ${salvageRun} salvage recovered.\n${shotsFired} rounds fired · peak ${peakProjectilesPerSecond.toFixed(1)} rounds/s · ${peakVolley} projectiles/volley.\nRecovered salvage is available in the hangar.`; $('end').classList.remove('hidden'); }
 function formatTime(t) { return `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(Math.floor(t % 60)).padStart(2, '0')}`; }
@@ -850,194 +991,10 @@ function tick(dt) {
     hitFlash = Math.max(0, hitFlash - dt);
     fullSprite.tint = hitFlash > 0 ? 0xff7777 : 0xffffff;
     updateWeaponAiming();
-    spawnClock -= dt;
-    const maxEnemies = Math.min(320, 55 + Math.floor(elapsed * 1.7));
-    const spawnEvery = Math.max(.10, .72 - elapsed * .0035);
-    if (spawnClock <= 0 && enemies.length < maxEnemies) {
-        spawnClock += spawnEvery;
-        for (let i = 0; i < Math.min(4, 1 + Math.floor(elapsed / 42)); i++)
-            spawnEnemy();
-    }
+    updateSpawnDirector(dt);
     fireEquippedWeapons(dt);
     // Pose follows chassis direction with no broken torso / leg seam.
     syncBastionPose(gaitFrame, visualFacing);
     coreEye.visible = boopTimer <= 0 && (visualFacing === 0 || visualFacing === 1 || visualFacing === 7);
-    for (let i = enemies.length - 1; i >= 0; i--) {
-        const e = enemies[i];
-        const x = player.x - e.x, y = player.y - e.y, d = Math.max(.001, dist(x, y));
-        e.x += (x / d) * e.speed * dt;
-        e.y += (y / d) * e.speed * dt;
-        e.view.position.set(e.x, e.y);
-        e.animation += dt * (e.kind === 'scout' ? 8 : e.kind === 'raider' ? 6 : 4);
-        e.view.texture = textures.enemyFrames[e.kind][Math.floor(e.animation + e.seed) % 2];
-        e.view.rotation = 0;
-        e.view.tint = 0xffffff;
-        e.attack -= dt;
-        if (d < e.radius + 12 && e.attack <= 0) {
-            e.attack = .8;
-            damagePlayer(e.kind === 'brute' ? 22 : e.kind === 'raider' ? 12 : 7);
-        }
-    }
+    moveEnemies(dt);
     for (let i = bullets.length - 1; i >= 0; i--) {
-        const b = bullets[i];
-        b.x += b.vx * dt;
-        b.y += b.vy * dt;
-        b.life -= dt;
-        b.view.position.set(b.x, b.y);
-        let destroyed = false;
-        for (let j = enemies.length - 1; j >= 0; j--) {
-            const e = enemies[j];
-            if (b.hits.has(e))
-                continue;
-            if (sq(e.x - b.x) + sq(e.y - b.y) < sq(e.radius + 4)) {
-                b.hits.add(e);
-                e.hp -= b.damage;
-                particle(b.x, b.y, '#ffa66b');
-                if (e.hp <= 0)
-                    enemyDeath(e);
-                else
-                    e.view.tint = 0xffd5aa;
-                b.remaining--;
-                if (b.remaining <= 0) {
-                    destroyed = true;
-                    break;
-                }
-            }
-        }
-        if (destroyed || b.life <= 0) {
-            b.view.destroy();
-            bullets.splice(i, 1);
-        }
-    }
-    for (let i = drops.length - 1; i >= 0; i--) {
-        const d = drops[i];
-        d.life += dt;
-        const dd = dist(player.x - d.x, player.y - d.y);
-        if (dd < player.magnet) {
-            d.x += (player.x - d.x) * Math.min(1, dt * 7);
-            d.y += (player.y - d.y) * Math.min(1, dt * 7);
-            d.view.position.set(d.x, d.y);
-        }
-        d.view.scale.set(1 + Math.sin(d.life * 6) * .12);
-        if (dd < 13) {
-            if (d.kind === 'xp') {
-                xp += d.value;
-                if (xp >= xpNeeded && !leveling)
-                    levelUp();
-            }
-            else {
-                salvageRun += d.value;
-                playSound(420, .06, 'sine', .03);
-            }
-            d.view.destroy();
-            drops.splice(i, 1);
-        }
-    }
-    for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.life -= dt;
-        p.x += p.vx * dt;
-        p.y += p.vy * dt;
-        p.view.position.set(p.x, p.y);
-        p.view.alpha = clamp(p.life / p.max, 0, 1);
-        if (p.life <= 0) {
-            p.view.destroy();
-            particles.splice(i, 1);
-        }
-    }
-    for (let i = wrecks.length - 1; i >= 0; i--) {
-        const w = wrecks[i];
-        w.life -= dt;
-        w.view.alpha = Math.min(1, w.life / 4);
-        if (w.life <= 0) {
-            w.view.destroy();
-            wrecks.splice(i, 1);
-        }
-    }
-    if (noticeUntil < elapsed)
-        $('notice').textContent = '';
-    updateHUD();
-    camera();
-}
-function camera() { const sx = rand(-screenShake, screenShake), sy = rand(-screenShake, screenShake); screenShake *= .83; world.position.set(W / 2 - player.x + sx, H / 2 - player.y + sy); const cx = Math.floor(player.x / 128), cy = Math.floor(player.y / 128); let i = 0; for (let y = -7; y <= 7; y++)
-    for (let x = -7; x <= 7; x++) {
-        const t = ground.children[i++];
-        const tx = cx + x, ty = cy + y;
-        t.position.set(tx * 128, ty * 128);
-        const next = textures.tiles[tileVariant(tx, ty)];
-        if (t.texture !== next)
-            t.texture = next;
-    } }
-async function init() {
-    W = Math.round(window.innerWidth / 3);
-    H = Math.round(window.innerHeight / 3);
-    app = new PIXI.Application();
-    await app.init({ width: W, height: H, background: '#202b2d', antialias: false, resolution: 1, autoDensity: false, preference: 'webgl' });
-    app.canvas.style.width = '100%';
-    app.canvas.style.height = '100%';
-    app.canvas.style.imageRendering = 'pixelated';
-    $('game').appendChild(app.canvas);
-    WeaponKit.validateDefinition(WeaponKit.bastionAutocannon);
-    makeTextures();
-    await buildBastionAtlas();
-    world = new PIXI.Container();
-    app.stage.addChild(world);
-    createTileScene();
-    makeMech();
-    mech.position.set(0, 0);
-    camera();
-    renderPreview();
-    app.ticker.add((ticker) => tick(ticker.deltaMS / 1000));
-    window.addEventListener('resize', () => { W = Math.round(window.innerWidth / 3); H = Math.round(window.innerHeight / 3); app.renderer.resize(W, H); camera(); });
-    $('start').onclick = startRun;
-    $('retry').onclick = startRun;
-    $('hangar-open').onclick = () => openHangar(false);
-    $('end-hangar').onclick = () => openHangar(false);
-    $('hangar-close').onclick = () => { $('hangar').classList.add('hidden'); if (armorOwned)
-        armorOverlay.visible = true; if (dead) {
-        $('end').classList.remove('hidden');
-    }
-    else if (!playing) {
-        $('menu').classList.remove('hidden');
-    }
-    else {
-        paused = false;
-    } };
-    $('buy-armor').onclick = () => { if (!armorOwned && permanentSalvage >= 30) {
-        armorOwned = true;
-        permanentSalvage -= 30;
-        save();
-        syncBastionPose(0, facingLower);
-        openHangar(hangarFromGame);
-        $('hangar-message').textContent = 'REINFORCED ARMOR INSTALLED // VISIBLE IN COMBAT. +35 MAX ARMOR.';
-        playSound(310, .2, 'triangle', .12);
-    } };
-    window.addEventListener('keydown', e => { const k = e.key.toLowerCase(); if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k))
-        e.preventDefault(); keys.add(k); if (e.repeat)
-        return; if (k === 'p' && playing) {
-        paused = !paused;
-        notice(paused ? 'PAUSED' : 'RESUMED');
-    } if (k === 'h' && playing && !leveling) {
-        if ($('hangar').classList.contains('hidden')) {
-            paused = true;
-            openHangar(true);
-        }
-        else {
-            $('hangar-close').click();
-        }
-    } if (k === 'm')
-        muted = !muted; });
-    window.addEventListener('keyup', e => keys.delete(e.key.toLowerCase()));
-    window.addEventListener('blur', () => keys.clear());
-    const ring = $('touch').querySelector('.touch-ring'), stick = $('touch-stick');
-    function moveTouch(e) { const r = ring.getBoundingClientRect(), x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2, d = Math.max(1, dist(x, y)), s = Math.min(1, d / 43); touchMove = { x: x / d * s, y: y / d * s }; stick.style.transform = `translate(${touchMove.x * 33}px,${touchMove.y * 33}px)`; }
-    ring.addEventListener('pointerdown', e => { ring.setPointerCapture(e.pointerId); moveTouch(e); });
-    ring.addEventListener('pointermove', e => { if (ring.hasPointerCapture(e.pointerId))
-        moveTouch(e); });
-    function stopTouch() { touchMove = { x: 0, y: 0 }; stick.style.transform = 'none'; }
-    ring.addEventListener('pointerup', stopTouch);
-    ring.addEventListener('pointercancel', stopTouch);
-}
-init().catch(e => { console.error(e); $('menu').querySelector('p').textContent = 'Unable to initialize graphics. Check PixiJS CDN, sprite assets and WebGL availability.'; });
-
-</script></body></html>
