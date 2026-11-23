@@ -69,3 +69,10 @@ The deployed `index.html` contains the full current browser build. The editable 
 ## v1.9 — Mobile battlefield view
 
 Mobile play now defaults to a wider field of view (camera pixel divisor 1.95 rather than 3.0); the Bastion takes up less screen space while enemies and weapon mechanics remain unchanged. Use the on-screen `−` / `+` camera buttons to zoom out or in. The setting is remembered in browser local storage (`ironwake_mobile_zoom`). Desktop camera remains unchanged.
+
+
+## v2.0 — Illustrated enemy artwork
+
+Four standard enemies (MW-1 Mule, SV-2 Wardog, LS-4 Needle, HS-7 Bulwark) now use illustrated 4-pose neo-retro pixel atlases and dedicated wreck art. The deployed `index.html` includes optimized art inline to prevent missing assets and oversized-source startup failures. Enemy HP, movement, damage, spawn timing, boss cadence, straight-forward Bastion firing, and permanent saves are unchanged. Existing prototype and boss art remain provisional. The full v2.0 downloadable project package contains the editable TypeScript, PNG source atlases, extraction tool, and regression test.
+
+**Known art compromise:** The illustrated Wardog includes its cannon in the base sprite; the older redundant turret overlay is hidden to prevent duplicated barrels. Its ranged targeting logic still works, but a future separated-turret art pass is needed for independently visible turret tracking.
