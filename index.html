@@ -40,7 +40,7 @@ window.addEventListener('unhandledrejection', function(ev) {
  function boot(){
   if(!window.PIXI){tell('STARTUP ERROR // PixiJS global unavailable');return}
   const g=document.createElement('script');
-  g.type='module';g.src='app-v22.js?v=22-diagnostic-3';
+  g.type='module';g.src='app-v22.js?v=22-imagefix-4';
   g.onerror=()=>tell('STARTUP ERROR // Game JavaScript failed to download');
   document.body.appendChild(g);
  }
