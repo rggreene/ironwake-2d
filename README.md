@@ -49,3 +49,10 @@ The browser and editor source should stay synchronized: `src/main.ts`, `src/weap
 ## v1.6 — MW-1 Mule compact mobile worker
 
 The basic Mule has been redesigned as a low-profile industrial mobile worker with four articulated wheeled supports, a compact armored utility housing, small camera optics, and a repurposed side-mounted firearm. It is original machinery inspired by functional industrial principles rather than a reproduction of a Gundam unit. New four-frame 96×96 transparent animated sprite and a matching destroyed wheeled wreck replace the earlier upright humanoid Mule. Other enemy classes and all gameplay balancing (including the seven-minute boss interval) are unchanged. v1.6 browser build is committed in the root `index.html`; the accompanying source release ZIP contains matching editable TypeScript and `build_mule_v16.py`. 
+
+
+## v1.7 — Mule V2 size and balance
+
+The MW-1 Mule remains a compact four-wheel mobile worker, but it is now roughly 18% smaller on screen (sprite scale 0.80 → 0.66), with 17 HP (from 21), 3 contact damage (from 5), 8 collision radius (from 10), and speed 40 (from 38). It remains common, with unchanged XP, salvage chance, and spawn cost. Its wreck uses the matching reduced scale. All other units, boss cadence, weapon upgrades, and persistent saves are unchanged.
+
+The deployed `index.html` contains the full current browser build. The editable `src/enemyRoster.ts` is committed; the downloadable v1.7 ZIP includes the remaining matching current source and tests.
