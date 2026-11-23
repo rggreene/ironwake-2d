@@ -1,10 +1,11 @@
 {
   "name": "ironwake-2d-first-deployment",
-  "version": "0.2.0",
+  "version": "2.2.0",
   "private": true,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "node test-support-v22.cjs"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
