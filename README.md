@@ -1,21 +1,47 @@
-# IRONWAKE 2D v1.4 — Industrial Escalation
+# IRONWAKE 2D — v1.5: Mule / Wardog Art Overhaul
 
-Playable PixiJS / TypeScript bullet-heaven proof of concept.
+A PixiJS + TypeScript browser proof of concept. The current build retains the 1.4 combat and difficulty tuning, including a straight-forward Bastion autocannon and a single Goliath boss no earlier than 7:00 (subsequent bosses spaced by at least seven minutes, never concurrent).
 
-## Changes
+## What changed
 
-The initial enemy progression now includes **MW-1 Mule** mobile worker (start), **SV-2 Wardog** security tank (after 1:05), **LS-4 Needle** light combat suit (after 2:15), and **HS-7 Bulwark** heavy suit (after 3:55). A rare **PX-1 Viper** prototype arrives from 5:30 onward; a single **MA-0 Goliath** mobile-armor boss is scheduled first at 7:00, with at least seven minutes between subsequent bosses and never more than one boss alive. The prototype and Goliath art are placeholders pending unique production art.
+- **MW-1 Mule:** new original 96 × 96 transparent pixel sprites (4 walking frames). Heavy work boots, distinct hips and knees, industrial camera head, backpack, work tool, improvised gun, hazard-worn armor.
+- **SV-2 Wardog:** new original 96 × 96 transparent tracked armored-vehicle sprite (4 independent tread motion frames), distinct animated turret sprite, recessed camera, physical gun barrel and vehicle markings.
+- **Wardog turret:** moves independently of vehicle hull, tracking the Bastion. Its projectiles emerge from the barrel's direction and approximate tip, not the middle of the chassis.
+- **Dedicated destroyed sprites:** a folded Mule with bent work arm and a Wardog with a wrecked hull, derailed track and offset gun; both share the existing indexed wreck atlas layout.
+- The remaining four classes, their behaviors, spawn timings, combat, permanent progress, and weapon builds are **unchanged**.
+- The generated sprite atlases are original, deterministic, and editable in `build_worker_tank.py`.
 
-The roster is data-driven in `src/enemyRoster.ts`, while regular enemy composition and threat growth remain configurable through `src/difficultyDirector.ts`. Tanks fire slow, readable projectiles; others pressure via contact; later waves introduce heavier suits. The Standard threat budget, swarm cap and early enemy HP have been reduced so players with a straight-forward weapon have room to experiment.
+## Run locally
 
-The Bastion's starting autocannon has a shorter firing interval, more damage and a **centerline muzzle anchor** with a subtle forward guide. The gun still fires continuously straight along the movement-facing direction with multishot and all existing upgrades intact. Its 8-direction sprite atlas, red startup LED, persistent armor, salvage saves and phone joystick remain.
+Open a terminal in this folder:
 
-## Local testing
+```sh
+python -m http.server 8000
+```
 
-Run `python -m http.server 8000` from this folder and browse `http://localhost:8000/`. PixiJS loads from the CDN, so an internet connection is required.
+Then visit http://localhost:8000. PixiJS is loaded from a CDN and therefore requires internet access.
 
-`npx tsc --noEmit` validates TypeScript, and the `node test-roster.cjs`, `node test-forward.cjs`, `node test-visual.cjs` suites check the current gameplay architecture. Browser WebGL startup must still be checked on a real browser/phone.
+## Compile and validate
 
-## Design caveat
+```sh
+npm install
+npm run build
+node test-forward.cjs
+node test-roster.cjs
+node test-early-art.cjs
+```
 
-These are an initial balancing pass, not final live-tuned statistics. Large elite and boss art, collision, attacks and TTK will be refined in playtesting. The game is single-player and uses localStorage for salvage ownership.
+`python build_worker_tank.py` regenerates the new Mule, Wardog, turret, wreck frames and preview. Run `python package_v15.py` after compiling to embed the sprite atlases and compiled code in a standalone GitHub Pages `index.html`.
+
+## Controls
+
+- WASD or arrow keys: move and face the Bastion.
+- Autocannon fires straight ahead in that facing; no auto-aim.
+- Touch joystick on phones.
+- H: hangar; P: pause; M: mute; F3: difficulty controls.
+
+## Production notes
+
+The Mule and Wardog now use their own illustrated original pixel art, but the light suit, heavy suit, prototype, and mobile-armor boss retain the earlier prototype artwork. The current player Bastion remains an illustrated 8-direction × 4-pose sprite atlas. We did not change damage, upgrades, permanent saves, or difficulty settings in v1.5.
+
+The browser and editor source should stay synchronized: `src/main.ts`, `src/weaponSystem.ts`, `src/enemyRoster.ts`, and `src/difficultyDirector.ts`. Do not edit only the bundled `index.html` without updating its source.
