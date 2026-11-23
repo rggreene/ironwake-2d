@@ -998,3 +998,46 @@ async function init() {
         $('end').classList.remove('hidden');
     }
     else if (!playing) {
+        $('menu').classList.remove('hidden');
+    }
+    else {
+        paused = false;
+    } };
+    $('buy-armor').onclick = () => { if (!armorOwned && permanentSalvage >= 30) {
+        armorOwned = true;
+        permanentSalvage -= 30;
+        save();
+        syncBastionPose(0, facingLower);
+        openHangar(hangarFromGame);
+        $('hangar-message').textContent = 'REINFORCED ARMOR INSTALLED // VISIBLE IN COMBAT. +35 MAX ARMOR.';
+        playSound(310, .2, 'triangle', .12);
+    } };
+    window.addEventListener('keydown', e => { const k = e.key.toLowerCase(); if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k))
+        e.preventDefault(); keys.add(k); if (e.repeat)
+        return; if (k === 'p' && playing) {
+        paused = !paused;
+        notice(paused ? 'PAUSED' : 'RESUMED');
+    } if (k === 'h' && playing && !leveling) {
+        if ($('hangar').classList.contains('hidden')) {
+            paused = true;
+            openHangar(true);
+        }
+        else {
+            $('hangar-close').click();
+        }
+    } if (k === 'm')
+        muted = !muted; });
+    window.addEventListener('keyup', e => keys.delete(e.key.toLowerCase()));
+    window.addEventListener('blur', () => keys.clear());
+    const ring = $('touch').querySelector('.touch-ring'), stick = $('touch-stick');
+    function moveTouch(e) { const r = ring.getBoundingClientRect(), x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2, d = Math.max(1, dist(x, y)), s = Math.min(1, d / 43); touchMove = { x: x / d * s, y: y / d * s }; stick.style.transform = `translate(${touchMove.x * 33}px,${touchMove.y * 33}px)`; }
+    ring.addEventListener('pointerdown', e => { ring.setPointerCapture(e.pointerId); moveTouch(e); });
+    ring.addEventListener('pointermove', e => { if (ring.hasPointerCapture(e.pointerId))
+        moveTouch(e); });
+    function stopTouch() { touchMove = { x: 0, y: 0 }; stick.style.transform = 'none'; }
+    ring.addEventListener('pointerup', stopTouch);
+    ring.addEventListener('pointercancel', stopTouch);
+}
+init().catch(e => { console.error(e); $('menu').querySelector('p').textContent = 'Unable to initialize graphics. Check PixiJS CDN, sprite assets and WebGL availability.'; });
+
+</script></body></html>
