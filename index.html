@@ -170,7 +170,8 @@ let app, world, ground, entities, effects, scene;
 let W = 640, H = 360, last = 0, elapsed = 0, spawnClock = 0, fireClock = 0, screenShake = 0, noticeUntil = 0, paused = false, playing = false, leveling = false, dead = false, hangarFromGame = false, boopTimer = 0;
 let kills = 0, xp = 0, level = 1, salvageRun = 0, xpNeeded = 14, hitFlash = 0, shotsFired = 0, peakProjectilesPerSecond = 0, peakVolley = 1;
 let directorTuning = { ...ThreatDirector.defaults };
-let spawnBudget = 0, recentDamage = 0, pressureNotice = 0;
+let spawnBudget = 0, recentDamage = 0;
+let queuedSpawn = null;
 let permanentSalvage = Number(localStorage.getItem('ironwake_salvage') || 0), armorOwned = localStorage.getItem('ironwake_armor') === 'true';
 let player = { x: 0, y: 0, hp: 120, max: 120, speed: 94, angle: 0, fireRate: 0.52, damage: 18, bulletSpeed: 320, range: 280, multishot: 1, spreadAngle: .085, penetration: 0, armor: 0, magnet: 28, movePhase: 0 };
 const enemies = [];
@@ -673,6 +674,7 @@ function reset() {
     elapsed = spawnClock = fireClock = screenShake = 0;
     spawnBudget = 0;
     recentDamage = 0;
+    queuedSpawn = null;
     kills = xp = salvageRun = shotsFired = peakProjectilesPerSecond = 0;
     peakVolley = 1;
     level = 1;
@@ -710,20 +712,16 @@ function updateSpawnDirector(dt) {
         return;
     let count = 0;
     while (spawnBudget >= 1 && enemies.length < cap && count < 8) {
-        const kind = ThreatDirector.choose(elapsed, directorTuning, Math.random());
+        // Lock a planned expensive spawn until its threat cost has accumulated.
+        // Otherwise cheap Needles continually starve Marauders and Brutes.
+        const kind = queuedSpawn ?? ThreatDirector.choose(elapsed, directorTuning, Math.random());
+        queuedSpawn = kind;
         const price = ThreatDirector.cost[kind];
-        if (spawnBudget < price) {
-            // Allow low-cost scouts rather than stalling the whole director.
-            if (kind !== 'scout' && spawnBudget >= 1) {
-                spawnEnemy('scout');
-                spawnBudget -= 1;
-                count++;
-                continue;
-            }
+        if (spawnBudget < price)
             break;
-        }
         spawnEnemy(kind);
         spawnBudget -= price;
+        queuedSpawn = null;
         count++;
     }
 }
@@ -998,3 +996,5 @@ function tick(dt) {
     coreEye.visible = boopTimer <= 0 && (visualFacing === 0 || visualFacing === 1 || visualFacing === 7);
     moveEnemies(dt);
     for (let i = bullets.length - 1; i >= 0; i--) {
+        const b = bullets[i];
+        b.x += b.vx * dt;
