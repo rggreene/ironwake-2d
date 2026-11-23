@@ -16,7 +16,7 @@
 <button id="director-toggle" aria-label="Open difficulty tuning" title="Difficulty tuning (F3)">⚙ DIFFICULTY</button>
 <div id="director-panel" class="hidden" aria-label="Difficulty testing controls"><div class="director-header"><b>THREAT DIRECTOR // TEST PANEL</b><button id="director-close" aria-label="Close tuning panel">✕</button></div><p>Live tuning — F3 toggles. Does not affect permanent progression.</p><label>Difficulty preset <select id="director-preset"><option value="recruit">Recruit</option><option value="standard">Standard</option><option value="veteran">Veteran</option><option value="hellfront">Hellfront</option></select></label><div id="director-controls"></div><label class="director-assist"><input id="director-assist" type="checkbox" checked> Brief pressure relief after heavy damage</label><div id="director-stats"></div><button id="director-reset">RESET TUNING</button></div>
 <div class="touch" id="touch"><div class="touch-ring"><div id="touch-stick"></div></div><small>DRAG TO MOVE</small></div>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script>
+<script>
 window.addEventListener('error', function(ev) {
   var p = document.querySelector('#menu p');
   var b = document.getElementById('start');
@@ -32,4 +32,28 @@ window.addEventListener('unhandledrejection', function(ev) {
   }
 });
 </script>
-<script type="module" src="app-v22.js?v=22-diagnostic-2"></script></body></html>
+<script>
+(function(){
+ const status=document.querySelector('#menu p');
+ const button=document.getElementById('start');
+ const tell=m=>{if(status)status.textContent=m};
+ function boot(){
+  if(!window.PIXI){tell('STARTUP ERROR // PixiJS global unavailable');return}
+  const g=document.createElement('script');
+  g.type='module';g.src='app-v22.js?v=22-diagnostic-3';
+  g.onerror=()=>tell('STARTUP ERROR // Game JavaScript failed to download');
+  document.body.appendChild(g);
+ }
+ function engineLoad(url,fallback){
+  const p=document.createElement('script');
+  p.src=url;p.onload=boot;
+  p.onerror=()=>{
+   if(fallback){tell('RETRYING GRAPHICS LIBRARY…');engineLoad(fallback,null)}
+   else {tell('STARTUP ERROR // Graphics library unavailable from both sources');if(button)button.disabled=true}
+  };
+  document.head.appendChild(p);
+ }
+ tell('LOADING GRAPHICS LIBRARY…');
+ engineLoad('https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js','https://unpkg.com/pixi.js@8.15.0/dist/pixi.min.js');
+})();
+</script></body></html>
