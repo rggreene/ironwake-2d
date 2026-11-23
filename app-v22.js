@@ -1705,7 +1705,11 @@ async function init() {
     for (const k of supportKinds)
         SupportWeapons.validate(SupportWeapons.definitions[k]);
     makeTextures();
-    await Promise.all([buildBastionAtlas(), buildCarrionAtlas()]);
+    $('menu').querySelector('p').textContent = 'LOADING BASTION ART…';
+    await buildBastionAtlas();
+    $('menu').querySelector('p').textContent = 'LOADING ENEMY ART…';
+    await buildCarrionAtlas();
+    $('menu').querySelector('p').textContent = 'ASSEMBLING BATTLEFIELD…';
     world = new PIXI.Container();
     app.stage.addChild(world);
     createTileScene();
@@ -1787,4 +1791,12 @@ async function init() {
     ring.addEventListener('pointerup', stopTouch);
     ring.addEventListener('pointercancel', stopTouch);
 }
-init().catch(e => { console.error(e); $('menu').querySelector('p').textContent = 'Unable to initialize graphics. Check PixiJS CDN, sprite assets and WebGL availability.'; });
+init().catch(e => {
+    console.error('IRONWAKE INITIALIZATION ERROR',e);
+    const msg = (e && (e.stack || e.message)) ? String(e.stack || e.message).split('\\n')[0] : String(e);
+    $('menu').querySelector('p').textContent = 'STARTUP ERROR // ' + msg.slice(0,240);
+    const btn=$('start');
+    btn.disabled=false;
+    btn.textContent='RETRY INITIALIZATION';
+    btn.onclick=()=>location.reload();
+});
