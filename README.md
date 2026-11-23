@@ -56,3 +56,11 @@ The basic Mule has been redesigned as a low-profile industrial mobile worker wit
 The MW-1 Mule remains a compact four-wheel mobile worker, but it is now roughly 18% smaller on screen (sprite scale 0.80 → 0.66), with 17 HP (from 21), 3 contact damage (from 5), 8 collision radius (from 10), and speed 40 (from 38). It remains common, with unchanged XP, salvage chance, and spawn cost. Its wreck uses the matching reduced scale. All other units, boss cadence, weapon upgrades, and persistent saves are unchanged.
 
 The deployed `index.html` contains the full current browser build. The editable `src/enemyRoster.ts` is committed; the downloadable v1.7 ZIP includes the remaining matching current source and tests.
+
+
+## v1.8 — Industrial Logistics Zone visual pass
+
+- Sixteen deterministic industrial battlefield tile designs: service roads, loading lanes, hazard bays, grates, piping, cable spools, crates, patched concrete, oil stains, shell craters and tread damage.
+- Brighter XP and salvage pickup art, stronger kinetic sparks and explosion rings.
+- No new terrain collision; movement, spawn pacing, boss cadence, weapon upgrades, and saved progression are unchanged.
+- Current editable TypeScript is provided in the v1.8 project archive from the ChatGPT conversation; deployed `index.html` is the playable build.
