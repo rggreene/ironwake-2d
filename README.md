@@ -76,3 +76,12 @@ Mobile play now defaults to a wider field of view (camera pixel divisor 1.95 rat
 Four standard enemies (MW-1 Mule, SV-2 Wardog, LS-4 Needle, HS-7 Bulwark) now use illustrated 4-pose neo-retro pixel atlases and dedicated wreck art. The deployed `index.html` includes optimized art inline to prevent missing assets and oversized-source startup failures. Enemy HP, movement, damage, spawn timing, boss cadence, straight-forward Bastion firing, and permanent saves are unchanged. Existing prototype and boss art remain provisional. The full v2.0 downloadable project package contains the editable TypeScript, PNG source atlases, extraction tool, and regression test.
 
 **Known art compromise:** The illustrated Wardog includes its cannon in the base sprite; the older redundant turret overlay is hidden to prevent duplicated barrels. Its ranged targeting logic still works, but a future separated-turret art pass is needed for independently visible turret tracking.
+
+
+## v2.1 — Viper and Goliath
+
+- **PX-1 Viper**: distinct four-frame high-performance suit art, short burst of increased movement approximately every 6.4 seconds, and prototype wreck.
+- **MA-0 Goliath**: new low-slung tracked mobile-armor sprite, boss health bar, 0.75-second visual telegraph, and three-projectile spread about every 4.5 seconds, plus dedicated wreck.
+- Existing balance, forward-only autocannon, Mull/Worker, Wardog, Needle, Bulwark, difficulty tuning, and save keys remain unchanged. Goliath still first appears at about seven minutes, with at least seven minutes between boss spawns and no two Goliaths simultaneously.
+- Root `index.html` currently contains the new sprite art inline to avoid missing asset files. The downloadable v2.1 ZIP includes editable TypeScript, source PNGs, and tests; the older TypeScript stored in this repository is not necessarily in sync with the deployed page.
+- Verification: TypeScript build, 14 new elite tests, 1,011 roster tests, 98 forward-fire tests, and existing v2.0 art checks. Live browser rendering remains to be checked.
