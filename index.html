@@ -16,4 +16,20 @@
 <button id="director-toggle" aria-label="Open difficulty tuning" title="Difficulty tuning (F3)">⚙ DIFFICULTY</button>
 <div id="director-panel" class="hidden" aria-label="Difficulty testing controls"><div class="director-header"><b>THREAT DIRECTOR // TEST PANEL</b><button id="director-close" aria-label="Close tuning panel">✕</button></div><p>Live tuning — F3 toggles. Does not affect permanent progression.</p><label>Difficulty preset <select id="director-preset"><option value="recruit">Recruit</option><option value="standard">Standard</option><option value="veteran">Veteran</option><option value="hellfront">Hellfront</option></select></label><div id="director-controls"></div><label class="director-assist"><input id="director-assist" type="checkbox" checked> Brief pressure relief after heavy damage</label><div id="director-stats"></div><button id="director-reset">RESET TUNING</button></div>
 <div class="touch" id="touch"><div class="touch-ring"><div id="touch-stick"></div></div><small>DRAG TO MOVE</small></div>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script type="module" src="app-v22.js?v=22"></script></body></html>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script>
+window.addEventListener('error', function(ev) {
+  var p = document.querySelector('#menu p');
+  var b = document.getElementById('start');
+  if (p && b && (b.disabled || !b.onclick)) {
+    p.textContent = 'STARTUP ERROR // ' + (ev.message || 'A game script failed to load. Try refreshing.');
+  }
+});
+window.addEventListener('unhandledrejection', function(ev) {
+  var p = document.querySelector('#menu p');
+  var b = document.getElementById('start');
+  if (p && b && (b.disabled || !b.onclick)) {
+    p.textContent = 'STARTUP ERROR // ' + String(ev.reason || 'Initialization failed');
+  }
+});
+</script>
+<script type="module" src="app-v22.js?v=22-hotfix-20261123"></script></body></html>
