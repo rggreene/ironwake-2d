@@ -1221,6 +1221,6 @@ async function init() {
     ring.addEventListener('pointerup', stopTouch);
     ring.addEventListener('pointercancel', stopTouch);
 }
-init().catch(e => { console.error(e); $('menu').querySelector('p').textContent = 'Unable to initialize graphics. Check PixiJS CDN, sprite assets and WebGL availability.'; });
+init().catch(e => { console.error('IRONWAKE startup failed',e); const info=$('menu').querySelector('p'); info.textContent='STARTUP FAILED // '+String(e)+' — report this error'; const b=$('start'); b.disabled=false; b.textContent='RETRY STARTUP'; b.onclick=()=>location.reload(); });
 
 </script></body></html>
