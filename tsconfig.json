@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ES2022",
+    "module": "none",
     "lib": [
       "ES2022",
       "DOM"
@@ -9,9 +9,13 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmitOnError": true,
-    "outDir": "dist"
+    "outFile": "dist/main.js"
   },
-  "include": [
+  "files": [
+    "src/enemyRoster.ts",
+    "src/difficultyDirector.ts",
+    "src/weaponSystem.ts",
+    "src/supportWeapons.ts",
     "src/main.ts"
   ]
 }
