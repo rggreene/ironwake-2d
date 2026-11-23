@@ -45,3 +45,7 @@ node test-early-art.cjs
 The Mule and Wardog now use their own illustrated original pixel art, but the light suit, heavy suit, prototype, and mobile-armor boss retain the earlier prototype artwork. The current player Bastion remains an illustrated 8-direction × 4-pose sprite atlas. We did not change damage, upgrades, permanent saves, or difficulty settings in v1.5.
 
 The browser and editor source should stay synchronized: `src/main.ts`, `src/weaponSystem.ts`, `src/enemyRoster.ts`, and `src/difficultyDirector.ts`. Do not edit only the bundled `index.html` without updating its source.
+
+## v1.6 — MW-1 Mule compact mobile worker
+
+The basic Mule has been redesigned as a low-profile industrial mobile worker with four articulated wheeled supports, a compact armored utility housing, small camera optics, and a repurposed side-mounted firearm. It is original machinery inspired by functional industrial principles rather than a reproduction of a Gundam unit. New four-frame 96×96 transparent animated sprite and a matching destroyed wheeled wreck replace the earlier upright humanoid Mule. Other enemy classes and all gameplay balancing (including the seven-minute boss interval) are unchanged. v1.6 browser build is committed in the root `index.html`; the accompanying source release ZIP contains matching editable TypeScript and `build_mule_v16.py`. 
