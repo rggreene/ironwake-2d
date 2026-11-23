@@ -1,15 +1,16 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v1.0</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><title>IRONWAKE // First Deployment v1.1</title><style>:root{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;color:#e2e7e3;background:#0b1014}*{box-sizing:border-box}body{margin:0;overflow:hidden;touch-action:none}#game{position:fixed;inset:0;background:#11191c}canvas{display:block;image-rendering:pixelated}#hud{position:fixed;inset:0;pointer-events:none;z-index:3}.hud-top{display:flex;align-items:flex-start;gap:22px;padding:16px 20px;background:linear-gradient(#080e13df,#080e1300)}.brand{min-width:230px;display:flex;flex-direction:column;gap:5px}.brand b{font-size:25px;letter-spacing:5px;color:#f3efdf}.brand small,.stat small{font-size:9px;letter-spacing:1px;color:#a4aead}.meters{width:190px}.meter-name{font-size:10px;color:#c3c9c5;display:flex;justify-content:space-between;margin:0 0 4px}.meter{height:7px;background:#263339;outline:1px solid #61707955;margin-bottom:9px}.meter i{height:100%;display:block;width:100%}.health{background:#cc6950}.xp{background:#7bbbd1}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:21px;white-space:nowrap}.bottom{position:absolute;bottom:15px;left:18px;color:#bec5b5;font-size:10px;letter-spacing:.7px;text-shadow:1px 1px #000;right:18px;display:flex;justify-content:space-between}#notice{color:#f6c477}.overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;background:#05090ccd;backdrop-filter:blur(4px)}.hidden{display:none!important}.panel{width:min(680px,calc(100vw - 28px));max-height:94vh;overflow:auto;background:#121c20;border:1px solid #52626a;box-shadow:0 0 0 5px #0007,0 22px 80px #000c;padding:28px}.panel.start{width:min(490px,calc(100vw - 28px))}.eyebrow{font-size:10px;color:#eeaa70;letter-spacing:2px;margin-bottom:12px}h1{letter-spacing:8px;font-size:clamp(36px,8vw,58px);margin:0}h1 span{color:#d87059}h2{letter-spacing:2px;margin:0 0 22px;font-size:24px}p{color:#aebabc;font-size:13px}.intro{margin:20px 0;background:#0c1418;padding:18px;color:#acb7b2;line-height:1.8;font-size:12px;border-left:3px solid #ce744d}button{font-family:inherit;cursor:pointer;border:1px solid #5d6d75;background:#223039;color:#e6eee8;font-weight:bold;letter-spacing:1px;padding:13px 16px;margin:8px 8px 0 0;text-align:left;transition:background .1s}button:hover{background:#3d5361}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#a84b35;color:#fff;border-color:#e5835b}.primary:hover{background:#c75e44}.start button{width:100%}.start>small{display:block;color:#879799;margin-top:20px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{margin:0;min-height:160px;display:flex;flex-direction:column;gap:12px}.card b{font-size:15px;color:#f4c28d}.card span{font-weight:normal;line-height:1.55;font-size:12px;color:#c4d0ce}.hangar{width:min(790px,calc(100vw - 28px))}.hangar-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}#hangar-preview{background:radial-gradient(circle,#304048,#10171b);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;border:1px solid #35444c;overflow:hidden}#hangar-preview img{max-width:90%;max-height:240px;image-rendering:pixelated}#hangar-preview small{font-size:10px;color:#acb7b3;padding:14px}.line{padding:11px 0;border-bottom:1px solid #304045;display:flex;justify-content:space-between;gap:12px;font-size:11px}.line span{color:#93a3a4}.hangar-info button{width:100%;font-size:11px}.hangar-info #hangar-message{font-size:11px;color:#e2b884;margin-top:14px;line-height:1.6}.touch{display:none;position:fixed;bottom:50px;left:26px;z-index:4;align-items:center;flex-direction:column;gap:8px;pointer-events:none}.touch-ring{border:2px solid #b2c8bb66;background:#3b5b5c33;border-radius:50%;height:116px;width:116px;position:relative;pointer-events:auto}#touch-stick{width:46px;height:46px;border-radius:50%;background:#b5cbb378;border:2px solid #d3e3d29c;position:absolute;top:33px;left:33px}.touch small{font-size:9px;color:#aabbb7}@media(pointer:coarse){.touch{display:flex}#hint{display:none}}@media(max-width:720px){.brand{min-width:unset}.brand b{font-size:17px;letter-spacing:2px}.brand small{font-size:7px}.hud-top{padding:10px;gap:9px}.meters{width:110px}.stat{display:none}.cards{grid-template-columns:1fr}.card{min-height:100px}.hangar-layout{grid-template-columns:1fr}.panel{padding:18px}}
 
 #gun-stats{font-size:10px;color:#f0b772;white-space:nowrap;margin-left:auto}#weapon-output{font-size:14px}.weapon-stat{min-width:125px}@media(max-width:720px){#gun-stats{font-size:8px;max-width:49vw;white-space:normal;text-align:right} .bottom{bottom:12px}}
 </style></head><body>
 <div id="game"></div>
 <div id="hud"><div class="hud-top"><div class="brand"><b>IRONWAKE</b><small>OPERATION: IRON DISTRICT · M14 BASTION</small></div><div class="meters"><div class="meter-name">ARMOR <span id="health-label">120 / 120</span></div><div class="meter"><i id="health-fill" class="health"></i></div><div class="meter-name">XP <span id="level-label">LVL 1</span></div><div class="meter"><i id="xp-fill" class="xp"></i></div></div><div class="stat weapon-stat"><small>FIRE</small><strong id="weapon-output">1.9 rounds/s</strong></div><div class="stat"><small>TIME</small><strong id="time">00:00</strong></div><div class="stat"><small>KILLS</small><strong id="kills">0</strong></div><div class="stat"><small>SALVAGE</small><strong id="salvage">0</strong></div></div><div class="bottom"><div id="hint">WASD / ARROWS MOVE · AUTO FIRE FORWARD · H HANGAR · P PAUSE · M MUTE</div><div id="notice"></div><div id="gun-stats">RATE <span id="weapon-rate">1.9 volleys/s</span> · MULTI <span id="weapon-multi">1</span> · PIERCE <span id="weapon-pierce">0</span></div></div></div>
-<div id="menu" class="overlay"><div class="panel start"><div class="eyebrow">BDG // FORWARD DEPLOYMENT</div><h1>IRON<span>WAKE</span></h1><p>FIRST DEPLOYMENT // BROWSER PROTOTYPE</p><div class="intro">M14 BASTION<br>40 MM KINETIC AUTOCANNON<br>INDUSTRIAL DISTRICT / HOT ZONE</div><button id="start" class="primary">INITIATE DEPLOYMENT <span>●</span></button><button id="hangar-open">ENTER HANGAR</button><small>Move with WASD or arrows. The autocannon fires straight ahead in your current movement-facing direction. Collect blue XP, choose temporary upgrades and salvage armor plating for your next run.</small></div></div>
+<div id="menu" class="overlay"><div class="panel start"><div class="eyebrow">BDG // FORWARD DEPLOYMENT</div><h1>IRON<span>WAKE</span></h1><p>FIRST DEPLOYMENT // INDUSTRIAL FIELD REWORK</p><div class="intro">M14 BASTION<br>40 MM KINETIC AUTOCANNON<br>INDUSTRIAL DISTRICT / HOT ZONE</div><button id="start" class="primary">INITIATE DEPLOYMENT <span>●</span></button><button id="hangar-open">ENTER HANGAR</button><small>Move with WASD or arrows. The autocannon fires straight ahead in your current movement-facing direction. Collect blue XP, choose temporary upgrades and salvage armor plating for your next run.</small></div></div>
 <div id="upgrade" class="overlay hidden"><div class="panel"><div class="eyebrow">FIELD CONFIGURATION // NEW LEVEL</div><h2>SELECT COMBAT UPGRADE</h2><div id="upgrade-options" class="cards"></div></div></div>
 <div id="hangar" class="overlay hidden"><div class="panel hangar"><div class="eyebrow">BASTION DEFENSE GROUP // SERVICE BAY 03</div><h2>M14 BASTION // HANGAR</h2><div class="hangar-layout"><div id="hangar-preview"><div id="mech-preview"></div><small>BDG-014 · STANDARD ASSAULT FRAME</small></div><div class="hangar-info"><div class="line"><span>CHASSIS</span><b>M14 BASTION</b></div><div class="line"><span>PRIMARY WEAPON</span><b>40 MM AUTOCANNON</b></div><div class="line"><span>ARMOR PACKAGE</span><b id="armor-status">STANDARD</b></div><div class="line"><span>AVAILABLE SALVAGE</span><b id="hangar-salvage">0</b></div><button id="buy-armor" class="primary">INSTALL REINFORCED ARMOR — 30 SALVAGE</button><div id="hangar-message">Fitting reinforced armor changes the visible torso and shoulder armor in combat.</div><button id="hangar-close">RETURN</button></div></div></div></div>
 <div id="end" class="overlay hidden"><div class="panel start"><div class="eyebrow">MISSION REPORT</div><h2>BASTION DISABLED</h2><p id="end-stats" style="white-space:pre-line"></p><button id="retry" class="primary">REDEPLOY</button><button id="end-hangar">HANGAR / PERMANENT UPGRADES</button></div></div>
 <div class="touch" id="touch"><div class="touch-ring"><div id="touch-stick"></div></div><small>DRAG TO MOVE</small></div>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script type="module">"use strict";
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.15.0/dist/pixi.min.js"></script><script type="module">
+"use strict";
 /** IRONWAKE weapon geometry and targeting. Pure game math: no PIXI or DOM dependency. */
 var WeaponKit;
 (function (WeaponKit) {
@@ -276,6 +277,7 @@ const BASTION_ATLAS_URL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAG
 const BASTION_W = 64, BASTION_H = 96;
 let fullFrames = [], armoredFrames = [];
 let fullSprite, mechShadow;
+let ambientDetails;
 let facingLower = 0, walkElapsed = 0;
 // Movement controls chassis and weapon-facing sprite. Fixed-forward weapons cannot rotate it.
 const directionFor = WeaponKit.direction;
@@ -361,27 +363,200 @@ function makeTextures() {
     textures.gun = drawBastionPart('gun');
     textures.armor = drawBastionPart('armor');
     textures.eye = drawBastionPart('eye');
-    textures.scout = tex(26, 26, c => { rect(c, 5, 8, 16, 11, '#915e47'); rect(c, 8, 4, 10, 19, '#53483c'); rect(c, 10, 6, 6, 15, '#b07f56'); rect(c, 2, 11, 5, 5, '#bd9b62'); rect(c, 19, 11, 5, 5, '#bd9b62'); rect(c, 11, 2, 4, 6, '#d0a774'); });
-    textures.raider = tex(32, 32, c => { rect(c, 5, 9, 22, 17, '#6c6561'); rect(c, 9, 5, 14, 22, '#363e43'); rect(c, 12, 8, 8, 19, '#9f7460'); rect(c, 3, 11, 5, 10, '#232c32'); rect(c, 24, 11, 5, 10, '#232c32'); rect(c, 11, 2, 10, 5, '#655453'); rect(c, 14, 4, 4, 4, '#cc8455'); });
-    textures.brute = tex(42, 42, c => { rect(c, 5, 9, 32, 27, '#352d2e'); rect(c, 8, 7, 26, 29, '#775344'); rect(c, 12, 11, 18, 18, '#4c393a'); rect(c, 13, 8, 16, 7, '#c28c55'); rect(c, 3, 17, 7, 13, '#3c4143'); rect(c, 32, 17, 7, 13, '#3c4143'); rect(c, 12, 33, 7, 7, '#2c3034'); rect(c, 23, 33, 7, 7, '#2c3034'); rect(c, 18, 3, 6, 7, '#c49c71'); });
-    textures.xp = tex(10, 10, c => { rect(c, 3, 0, 4, 2, '#b9faff'); rect(c, 1, 2, 8, 6, '#287993'); rect(c, 3, 3, 4, 4, '#a7edee'); rect(c, 3, 8, 4, 2, '#5ab4ce'); });
-    textures.salvage = tex(12, 12, c => { rect(c, 2, 2, 8, 8, '#b38550'); rect(c, 4, 4, 4, 4, '#f0c778'); rect(c, 1, 5, 10, 2, '#786344'); });
-    textures.bullet = tex(10, 5, c => { rect(c, 0, 1, 8, 3, '#d4a96b'); rect(c, 7, 0, 3, 5, '#fff2ba'); });
+    // Pixel art for three mechanically distinct enemy families.
+    // These are not recolors: scout is a narrow drone, raider a compact two-leg frame,
+    // brute a wide industrial assault chassis. Every enemy has two alternating gait frames.
+    function enemyArt(kind, frame) {
+        const size = kind === 'scout' ? 30 : kind === 'raider' ? 38 : 52;
+        return tex(size, size, c => {
+            const ox = size / 2, step = frame === 0 ? -2 : 2;
+            const C = (x, y, w, h, col) => rect(c, Math.round(ox + x), y, w, h, col);
+            if (kind === 'scout') {
+                C(-8, 4, 16, 5, '#1c2529');
+                C(-7, 5, 14, 4, '#957d58');
+                C(-11, 9, 5, 16, '#222d31');
+                C(6, 9, 5, 16, '#222d31');
+                for (let j = 0; j < 3; j++) {
+                    C(-10, 11 + j * 4, 3, 2, '#b4a074');
+                    C(7, 11 + j * 4, 3, 2, '#b4a074');
+                }
+                C(-7, 9, 14, 15, '#263338');
+                C(-5, 10, 10, 11, '#ab8760');
+                C(-3, 12, 6, 7, '#624c3b');
+                C(-4, 3, 8, 6, '#262e32');
+                C(-3, 4, 6, 4, '#b19869');
+                C(-2, 5, 4, 2, '#79c4cf');
+                C(-4, 23, 3, 4, '#605c4c');
+                C(2, 23, 3, 4, '#605c4c');
+                C(-8, 14 + step, 2, 5, '#e6ae66');
+                C(6, 14 - step, 2, 5, '#e6ae66');
+            }
+            else if (kind === 'raider') {
+                // Gray-red armored raider, twin legs, right-side ballistic weapon.
+                C(-13, 13 + step, 8, 17, '#242b2e');
+                C(5, 13 - step, 8, 17, '#242b2e');
+                C(-11, 14 + step, 5, 13, '#61656a');
+                C(6, 14 - step, 5, 13, '#61656a');
+                C(-14, 27 + step, 10, 5, '#303336');
+                C(4, 27 - step, 10, 5, '#303336');
+                C(-14, 7, 28, 15, '#1d282d');
+                C(-11, 9, 22, 12, '#74635d');
+                C(-11, 10, 5, 9, '#b16b52');
+                C(6, 10, 5, 9, '#b16b52');
+                C(-6, 11, 12, 8, '#40464a');
+                C(-4, 11, 8, 3, '#a68b73');
+                C(-6, 4, 12, 7, '#293439');
+                C(-5, 5, 10, 4, '#927565');
+                C(-3, 7, 6, 2, '#f19b60');
+                C(12, 12, 4, 15, '#20262a');
+                C(13, 5, 2, 14, '#a4a29a');
+                C(-15, 12, 4, 12, '#4c5352');
+                C(-15, 13, 3, 4, '#b06e4f');
+                C(-4, 23, 8, 3, '#b3a18a');
+            }
+            else {
+                // Heavy angular siege frame with broad shoulders, visible knees and cannon.
+                C(-17, 17 + step, 13, 26, '#25282b');
+                C(4, 17 - step, 13, 26, '#25282b');
+                C(-15, 20 + step, 9, 18, '#66574a');
+                C(6, 20 - step, 9, 18, '#66574a');
+                C(-18, 39 + step, 15, 7, '#25292c');
+                C(3, 39 - step, 15, 7, '#25292c');
+                C(-22, 10, 44, 21, '#232a2d');
+                C(-19, 12, 38, 17, '#76594c');
+                C(-21, 12, 10, 15, '#9b6748');
+                C(11, 12, 10, 15, '#9b6748');
+                C(-14, 15, 28, 10, '#3d4142');
+                C(-11, 16, 22, 4, '#8a7865');
+                C(-9, 5, 18, 11, '#242b2d');
+                C(-7, 6, 14, 8, '#95755b');
+                C(-4, 9, 8, 3, '#ffb36d');
+                C(-7, 29, 14, 5, '#272b2f');
+                C(15, 19, 8, 17, '#242a2e');
+                C(18, 1, 4, 28, '#797f77');
+                C(-23, 15, 5, 15, '#34393b');
+                C(-24, 17, 4, 6, '#d09c63');
+                C(0, 1, 2, 6, '#a5a69a');
+            }
+        });
+    }
+    textures.enemyFrames = { scout: [enemyArt('scout', 0), enemyArt('scout', 1)], raider: [enemyArt('raider', 0), enemyArt('raider', 1)], brute: [enemyArt('brute', 0), enemyArt('brute', 1)] };
+    // Retain aliases for codepaths that inspect the texture dictionary.
+    textures.scout = textures.enemyFrames.scout[0];
+    textures.raider = textures.enemyFrames.raider[0];
+    textures.brute = textures.enemyFrames.brute[0];
+    textures.xp = tex(12, 12, c => {
+        rect(c, 5, 0, 2, 2, '#c9faff');
+        rect(c, 3, 2, 6, 2, '#79d6e5');
+        rect(c, 1, 4, 10, 4, '#286c92');
+        rect(c, 3, 5, 6, 2, '#baf5ed');
+        rect(c, 4, 8, 4, 2, '#448eb9');
+        rect(c, 5, 10, 2, 2, '#a3f4fa');
+    });
+    textures.salvage = tex(14, 14, c => {
+        rect(c, 2, 3, 10, 9, '#1e252a');
+        rect(c, 3, 2, 8, 10, '#9b7850');
+        rect(c, 5, 3, 4, 7, '#e4b66b');
+        rect(c, 1, 6, 12, 2, '#5b5550');
+        rect(c, 4, 4, 2, 2, '#f9d48b');
+        rect(c, 9, 9, 3, 3, '#565a54');
+    });
+    textures.bullet = tex(14, 5, c => { rect(c, 0, 2, 5, 1, '#e69d4b'); rect(c, 4, 1, 7, 3, '#d9bb7b'); rect(c, 10, 0, 4, 5, '#fff2b3'); });
     textures.shell = tex(5, 3, c => { rect(c, 0, 0, 5, 3, '#be995b'); rect(c, 1, 0, 2, 1, '#ffe1a1'); });
-    textures.spark = tex(5, 5, c => { rect(c, 1, 0, 3, 5, '#ffad63'); rect(c, 0, 1, 5, 3, '#ffd8a0'); });
-    textures.wreck = tex(28, 28, c => { rect(c, 5, 7, 20, 18, '#2b2928'); rect(c, 7, 6, 15, 18, '#4f3b30'); rect(c, 9, 11, 12, 8, '#1c2426'); rect(c, 3, 17, 5, 6, '#423b36'); rect(c, 20, 18, 7, 6, '#423b36'); rect(c, 13, 13, 5, 4, '#b56838'); });
-    textures.tile = tex(128, 128, c => { rect(c, 0, 0, 128, 128, '#31383a'); for (let y = 0; y < 128; y += 32) {
-        for (let x = 0; x < 128; x += 32) {
-            const v = ((x * 71 + y * 31) % 7);
-            rect(c, x, y, 32, 1, '#485052');
-            rect(c, x, y, 1, 32, '#42494c');
-            if (v < 3)
-                rect(c, x + 8, y + 14, 4, 2, '#414747');
-            if (v === 4)
-                rect(c, x + 26, y + 7, 2, 7, '#292e31');
-        }
-    } rect(c, 80, 0, 18, 128, '#3b4240'); for (let y = 10; y < 128; y += 24)
-        rect(c, 87, y, 3, 8, '#8b86685a'); rect(c, 0, 105, 128, 2, '#665943'); });
+    textures.spark = tex(9, 9, c => { rect(c, 4, 0, 1, 9, '#ef9c48'); rect(c, 0, 4, 9, 1, '#ffa95c'); rect(c, 2, 2, 5, 5, '#ffc46e'); rect(c, 3, 3, 3, 3, '#fff5ba'); });
+    const wreckArt = (kind) => tex(52, 52, c => {
+        // Collapsed armor and fractured joints in palette matching the enemy type.
+        const tone = kind === 'scout' ? '#8e7857' : kind === 'raider' ? '#76645c' : '#855a48';
+        rect(c, 11, 26, 32, 14, '#1c2528');
+        rect(c, 15, 21, 25, 18, tone);
+        rect(c, 18, 23, 17, 8, '#363b3c');
+        rect(c, 6, 30, 12, 8, '#4c4f49');
+        rect(c, 39, 27, 9, 12, '#46433e');
+        rect(c, 16, 39, 10, 5, '#4c4239');
+        rect(c, 29, 40, 13, 5, '#383e3d');
+        rect(c, 22, 24, 4, 3, '#e08b4c');
+        rect(c, 33, 31, 3, 4, '#c0603a');
+        rect(c, 12, 18, 9, 5, tone);
+        rect(c, 33, 19, 10, 5, tone);
+    });
+    textures.wreckTypes = { scout: wreckArt('scout'), raider: wreckArt('raider'), brute: wreckArt('brute') };
+    textures.wreck = textures.wreckTypes.scout;
+    textures.tiles = [];
+    for (let variant = 0; variant < 8; variant++)
+        textures.tiles.push(tex(128, 128, c => {
+            rect(c, 0, 0, 128, 128, variant === 2 ? '#323b3d' : '#30383a');
+            // Concrete apron: inset expansion seams and occasional repaired slabs.
+            for (let y = 0; y < 128; y += 32)
+                for (let x = 0; x < 128; x += 32) {
+                    rect(c, x, y, 32, 1, '#495153');
+                    rect(c, x, y, 1, 32, '#444e50');
+                    const n = (x * 3 + y * 7 + variant * 19) % 11;
+                    if (n < 4)
+                        rect(c, x + 8, y + 13, 7, 2, '#40494a');
+                    if (n === 5)
+                        rect(c, x + 24, y + 7, 2, 8, '#283236');
+                    if (n === 8) {
+                        rect(c, x + 5, y + 21, 12, 3, '#384146');
+                        rect(c, x + 8, y + 22, 7, 1, '#626b68');
+                    }
+                }
+            if (variant === 0 || variant === 5) {
+                // Service lane and painted divider.
+                rect(c, 47, 0, 36, 128, '#394244');
+                rect(c, 46, 0, 2, 128, '#505a57');
+                rect(c, 83, 0, 2, 128, '#505a57');
+                for (let y = 5; y < 128; y += 26)
+                    rect(c, 64, y, 3, 12, '#a69a6c');
+            }
+            if (variant === 1) {
+                // Hazard bay markings.
+                rect(c, 0, 92, 128, 5, '#857453');
+                rect(c, 0, 96, 128, 2, '#242d31');
+                for (let x = 0; x < 128; x += 16) {
+                    rect(c, x, 93, 7, 2, '#343a38');
+                }
+            }
+            if (variant === 3) {
+                // Industrial grate and access hatch.
+                rect(c, 12, 15, 43, 31, '#232d31');
+                rect(c, 16, 18, 35, 25, '#4d5755');
+                for (let y = 20; y < 42; y += 5)
+                    rect(c, 18, y, 31, 2, '#222e31');
+                for (let x = 15; x < 58; x += 34)
+                    for (let y = 16; y < 47; y += 27)
+                        rect(c, x, y, 3, 3, '#b0a078');
+            }
+            if (variant === 4) {
+                rect(c, 71, 65, 39, 24, '#3c4546');
+                rect(c, 75, 69, 30, 17, '#242e32');
+                for (let y = 72; y < 84; y += 4)
+                    rect(c, 78, y, 25, 1, '#62716e');
+                rect(c, 9, 24, 22, 3, '#635d49');
+                rect(c, 9, 27, 22, 2, '#242f32');
+            }
+            if (variant === 6) {
+                // Scuffed vehicle loading zone.
+                rect(c, 11, 7, 91, 3, '#777158');
+                rect(c, 11, 10, 91, 2, '#202c31');
+                rect(c, 12, 100, 94, 2, '#66604d');
+                rect(c, 21, 18, 2, 52, '#282f31');
+                rect(c, 71, 24, 2, 42, '#283033');
+            }
+            if (variant === 7) {
+                // Shell craters and broken roadway without collision.
+                rect(c, 69, 23, 27, 13, '#222b2e');
+                rect(c, 74, 27, 17, 6, '#303438');
+                rect(c, 15, 89, 19, 8, '#222b2e');
+                rect(c, 19, 92, 11, 3, '#3b4040');
+                rect(c, 48, 66, 16, 2, '#545653');
+                rect(c, 54, 68, 2, 10, '#464e4c');
+            }
+            for (let i = 0; i < 8; i++) {
+                const x = (i * 29 + variant * 17) % 126, y = (i * 47 + variant * 31) % 126;
+                rect(c, x, y, 2, 1, i % 2 ? '#515b59' : '#263034');
+            }
+        }));
+    textures.tile = textures.tiles[0];
 }
 function makeMech() {
     mech = new PIXI.Container();
@@ -410,12 +585,13 @@ function renderPreview() {
     cv.style.imageRendering = 'pixelated';
     holder.appendChild(cv);
 }
+function tileVariant(tx, ty) { let h = Math.imul(tx, 374761393) ^ Math.imul(ty, 668265263); h = Math.imul(h ^ (h >>> 13), 1274126177); return (h ^ (h >>> 16)) & 7; }
 function createTileScene() {
     ground = new PIXI.Container();
     world.addChild(ground);
     for (let y = -7; y <= 7; y++)
         for (let x = -7; x <= 7; x++) {
-            const tile = spr(textures.tile, 0);
+            const tile = spr(textures.tiles[tileVariant(x, y)], 0);
             tile.x = x * 128;
             tile.y = y * 128;
             ground.addChild(tile);
@@ -474,16 +650,16 @@ function spawnEnemy() {
     const angle = rand(0, Math.PI * 2), r = Math.max(W, H) / 2 + 65;
     const x = player.x + Math.cos(angle) * r, y = player.y + Math.sin(angle) * r;
     const stats = kind === 'scout' ? [28, 45, 9] : kind === 'raider' ? [65, 29, 13] : [155, 18, 18];
-    const hp = stats[0] * (1 + elapsed / 250), view = spr(textures[kind]);
+    const hp = stats[0] * (1 + elapsed / 250), view = spr(textures.enemyFrames[kind][0]);
     view.position.set(x, y);
-    view.rotation = rand(-.3, .3);
+    view.rotation = 0;
     entities.addChild(view);
-    enemies.push({ x, y, hp, max: hp, speed: stats[1] * (1 + elapsed / 450), radius: stats[2], kind, view, attack: 0, seed: rand(0, 10) });
+    enemies.push({ x, y, hp, max: hp, speed: stats[1] * (1 + elapsed / 450), radius: stats[2], kind, view, attack: 0, seed: rand(0, 10), animation: 0 });
 }
 function dropAt(x, y, kind, value = 1) { const view = spr(textures[kind]); view.position.set(x, y); effects.addChild(view); drops.push({ x, y, kind, value, view, life: 0 }); }
 function particle(x, y, color, power = 1) { const v = gfxCircle(rand(.7, 1.8) * power, color); effects.addChild(v); v.position.set(x, y); const a = rand(0, Math.PI * 2), speed = rand(20, 90); particles.push({ x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed, life: rand(.2, .55), max: .55, view: v }); }
-function burst(x, y, large = false) { screenShake = Math.max(screenShake, large ? 5 : 2); for (let i = 0; i < (large ? 20 : 8); i++)
-    particle(x, y, ['#ffcc79', '#ed8049', '#596060', '#ffd9a2'][i % 4], large ? 1.5 : 1); const ring = new PIXI.Graphics().circle(0, 0, large ? 12 : 6).stroke({ width: 2, color: '#f6c68d' }); ring.position.set(x, y); effects.addChild(ring); particles.push({ x, y, vx: 0, vy: 0, life: .17, max: .17, view: ring }); }
+function burst(x, y, large = false) { screenShake = Math.max(screenShake, large ? 5 : 2); for (let i = 0; i < (large ? 26 : 11); i++)
+    particle(x, y, ['#ffcc79', '#ed8049', '#596060', '#ffd9a2', '#777e79'][i % 5], large ? 1.7 : 1); const ring = new PIXI.Graphics().circle(0, 0, large ? 12 : 6).stroke({ width: 2, color: '#f6c68d' }); ring.position.set(x, y); effects.addChild(ring); particles.push({ x, y, vx: 0, vy: 0, life: .17, max: .17, view: ring }); }
 // The generic firing pipeline consumes the same aiming solution used by sprite selection.
 function fireWeapon(def, solution) {
     if (!solution)
@@ -541,7 +717,7 @@ function enemyDeath(e) {
     dropAt(e.x, e.y, 'xp', e.kind === 'brute' ? 6 : e.kind === 'raider' ? 3 : 1);
     if (Math.random() < (e.kind === 'brute' ? .8 : .17))
         dropAt(e.x + rand(-6, 6), e.y + rand(-6, 6), 'salvage', e.kind === 'brute' ? 3 : 1);
-    const w = spr(textures.wreck);
+    const w = spr(textures.wreckTypes[e.kind]);
     w.position.set(e.x, e.y);
     w.rotation = rand(-3.14, 3.14);
     scene.addChild(w);
@@ -639,7 +815,7 @@ function playSound(freq, duration, type = 'sine', gain = .08) { if (muted)
     o.stop(audioContext.currentTime + duration);
 }
 catch { } }
-function startRun() { reset(); $('menu').classList.add('hidden'); $('end').classList.add('hidden'); $('hangar').classList.add('hidden'); playing = true; boopTimer = 1.15; notice('SYSTEMS INITIALIZING'); playSound(170, .16, 'triangle', .06); }
+function startRun() { reset(); $('menu').classList.add('hidden'); $('end').classList.add('hidden'); $('hangar').classList.add('hidden'); playing = true; boopTimer = 1.15; notice('SYSTEMS INITIALIZING // IRON DISTRICT'); playSound(170, .16, 'triangle', .06); }
 function tick(dt) {
     if (!playing || paused || leveling || !$('hangar').classList.contains('hidden'))
         return;
@@ -692,7 +868,10 @@ function tick(dt) {
         e.x += (x / d) * e.speed * dt;
         e.y += (y / d) * e.speed * dt;
         e.view.position.set(e.x, e.y);
-        e.view.rotation = Math.atan2(y, x) + Math.PI / 2;
+        e.animation += dt * (e.kind === 'scout' ? 8 : e.kind === 'raider' ? 6 : 4);
+        e.view.texture = textures.enemyFrames[e.kind][Math.floor(e.animation + e.seed) % 2];
+        e.view.rotation = 0;
+        e.view.tint = 0xffffff;
         e.attack -= dt;
         if (d < e.radius + 12 && e.attack <= 0) {
             e.attack = .8;
@@ -716,6 +895,8 @@ function tick(dt) {
                 particle(b.x, b.y, '#ffa66b');
                 if (e.hp <= 0)
                     enemyDeath(e);
+                else
+                    e.view.tint = 0xffd5aa;
                 b.remaining--;
                 if (b.remaining <= 0) {
                     destroyed = true;
@@ -737,6 +918,7 @@ function tick(dt) {
             d.y += (player.y - d.y) * Math.min(1, dt * 7);
             d.view.position.set(d.x, d.y);
         }
+        d.view.scale.set(1 + Math.sin(d.life * 6) * .12);
         if (dd < 13) {
             if (d.kind === 'xp') {
                 xp += d.value;
@@ -780,7 +962,11 @@ function tick(dt) {
 function camera() { const sx = rand(-screenShake, screenShake), sy = rand(-screenShake, screenShake); screenShake *= .83; world.position.set(W / 2 - player.x + sx, H / 2 - player.y + sy); const cx = Math.floor(player.x / 128), cy = Math.floor(player.y / 128); let i = 0; for (let y = -7; y <= 7; y++)
     for (let x = -7; x <= 7; x++) {
         const t = ground.children[i++];
-        t.position.set((cx + x) * 128, (cy + y) * 128);
+        const tx = cx + x, ty = cy + y;
+        t.position.set(tx * 128, ty * 128);
+        const next = textures.tiles[tileVariant(tx, ty)];
+        if (t.texture !== next)
+            t.texture = next;
     } }
 async function init() {
     W = Math.round(window.innerWidth / 3);
@@ -812,45 +998,3 @@ async function init() {
         $('end').classList.remove('hidden');
     }
     else if (!playing) {
-        $('menu').classList.remove('hidden');
-    }
-    else {
-        paused = false;
-    } };
-    $('buy-armor').onclick = () => { if (!armorOwned && permanentSalvage >= 30) {
-        armorOwned = true;
-        permanentSalvage -= 30;
-        save();
-        syncBastionPose(0, facingLower);
-        openHangar(hangarFromGame);
-        $('hangar-message').textContent = 'REINFORCED ARMOR INSTALLED // VISIBLE IN COMBAT. +35 MAX ARMOR.';
-        playSound(310, .2, 'triangle', .12);
-    } };
-    window.addEventListener('keydown', e => { const k = e.key.toLowerCase(); if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k))
-        e.preventDefault(); keys.add(k); if (e.repeat)
-        return; if (k === 'p' && playing) {
-        paused = !paused;
-        notice(paused ? 'PAUSED' : 'RESUMED');
-    } if (k === 'h' && playing && !leveling) {
-        if ($('hangar').classList.contains('hidden')) {
-            paused = true;
-            openHangar(true);
-        }
-        else {
-            $('hangar-close').click();
-        }
-    } if (k === 'm')
-        muted = !muted; });
-    window.addEventListener('keyup', e => keys.delete(e.key.toLowerCase()));
-    window.addEventListener('blur', () => keys.clear());
-    const ring = $('touch').querySelector('.touch-ring'), stick = $('touch-stick');
-    function moveTouch(e) { const r = ring.getBoundingClientRect(), x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2, d = Math.max(1, dist(x, y)), s = Math.min(1, d / 43); touchMove = { x: x / d * s, y: y / d * s }; stick.style.transform = `translate(${touchMove.x * 33}px,${touchMove.y * 33}px)`; }
-    ring.addEventListener('pointerdown', e => { ring.setPointerCapture(e.pointerId); moveTouch(e); });
-    ring.addEventListener('pointermove', e => { if (ring.hasPointerCapture(e.pointerId))
-        moveTouch(e); });
-    function stopTouch() { touchMove = { x: 0, y: 0 }; stick.style.transform = 'none'; }
-    ring.addEventListener('pointerup', stopTouch);
-    ring.addEventListener('pointercancel', stopTouch);
-}
-init().catch(e => { console.error(e); $('menu').querySelector('p').textContent = 'Unable to initialize graphics. Check PixiJS CDN, sprite assets and WebGL availability.'; });
-</script></body></html>
