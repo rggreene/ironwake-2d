@@ -57,3 +57,7 @@ Verification: `npx tsc --noEmit && npx tsc`, `node test-forward.cjs`, `node test
 - Difficulty presets: Recruit, Standard, Veteran and Hellfront.
 - Dev panel: click ⚙ DIFFICULTY or press F3. Live-adjust spawn, HP, damage, speed and enemy-type weights. Tuning resets on reload and does not modify player saves.
 - Non-punitive short pressure relief after heavy damage (toggleable). No direct scaling to weapon DPS.
+
+## v1.3 — Illustrated Carrion enemy visuals
+
+The deployed `index.html` now loads original illustrated Carrion League sprite art for Needle, Marauder, and Brute enemies instead of the old rectangular placeholder sprites. Each has four lightweight motion poses and a distinct illustrated wreck. The three pixel sprite atlases and editable TS project are included in the downloadable v1.3 package; the live page inlines the small enemy atlases to avoid missing assets or oversized HTML. Existing difficulty tuning, straight-ahead autocannon, saved salvage, and upgrade mechanics are unchanged. The repo `src/main.ts` may be behind the deployed page; use the v1.3 archive for the current source until synchronized.
