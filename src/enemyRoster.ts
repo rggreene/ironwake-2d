@@ -1,4 +1,4 @@
-/** IRONWAKE v1.7: graduated, data-driven industrial battlefield roster. */
+/** IRONWAKE v1.4: graduated, data-driven industrial battlefield roster. */
 namespace EnemyRoster {
  export type Kind = 'worker'|'tank'|'light'|'heavy'|'prototype'|'boss';
  export type Role = 'swarm'|'ranged'|'skirmisher'|'anchor'|'elite'|'boss';
