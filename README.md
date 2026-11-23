@@ -64,3 +64,8 @@ The deployed `index.html` contains the full current browser build. The editable 
 - Brighter XP and salvage pickup art, stronger kinetic sparks and explosion rings.
 - No new terrain collision; movement, spawn pacing, boss cadence, weapon upgrades, and saved progression are unchanged.
 - Current editable TypeScript is provided in the v1.8 project archive from the ChatGPT conversation; deployed `index.html` is the playable build.
+
+
+## v1.9 — Mobile battlefield view
+
+Mobile play now defaults to a wider field of view (camera pixel divisor 1.95 rather than 3.0); the Bastion takes up less screen space while enemies and weapon mechanics remain unchanged. Use the on-screen `−` / `+` camera buttons to zoom out or in. The setting is remembered in browser local storage (`ironwake_mobile_zoom`). Desktop camera remains unchanged.
