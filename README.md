@@ -21,3 +21,7 @@ The PX-1 Viper is now a differentiated experimental light frame with a distinct 
 Static hosting uses a small `index.html` and a versioned `app-v21.js` so GitHub Pages never depends on a giant inline script. The new `assets/enemies/*_v21.png` images are external and versioned. Do not deploy only the HTML; upload the JS and four sprite PNG files together. Original enemy assets remain intact.
 
 Run `npx tsc && node test-elite-v21.cjs && node test-roster.cjs && node test-forward.cjs && node test-art-v20.cjs`, then `python package_v21.py`. The full-graphics browser startup and difficulty feel still require a live playtest.
+
+## v2.3 — Kinetic attack animation pass
+
+Visual-only combat feedback: the Bastion now has short recoil and an aligned muzzle flash; the Wardog's turret recoils briefly; enemy projectiles and unlocked support weapons create directional muzzle flashes; the Goliath's windup now pulses visually during its existing warning; weapon impacts get a secondary spark. Effects have a fixed 64-flash budget, expire automatically, and reset between runs. No modifications to weapon damage, fire rate, enemy health, spawn pacing, boss cadence, or save keys. The current browser build is the versioned `app-v23.js` loaded by `index.html`. The downloadable v2.3 archive includes the updated editable TypeScript and regression tests.
