@@ -1422,7 +1422,7 @@ function moveEnemies(dt) {
                     // Reverse rather than rotate the vehicle 180 degrees when too close.
                     const heading=Math.atan2(dy,dx)+Math.PI/2;
                     const forwardX=Math.sin(e.hullHeading),forwardY=-Math.cos(e.hullHeading);
-                    const wanted=backwards?heading+Math.PI:heading;
+                    const wanted=heading; // nose stays toward threat; reverse gear moves away
                     const delta=Math.atan2(Math.sin(wanted-e.hullHeading),Math.cos(wanted-e.hullHeading));
                     if(Math.abs(delta)>.12){
                         e.hullHeading+=clamp(delta,-dt*1.25,dt*1.25);
