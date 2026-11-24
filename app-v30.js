@@ -1514,8 +1514,8 @@ function moveEnemies(dt) {
             e.tankRecoil=Math.max(0,e.tankRecoil-dt*7);
             const recoil=e.tankRecoil;
             e.turret.texture=textures.wardogTurretDirs[turretDir][recoil>.34?1:0];
-            const backAngle=e.turretHeading+Math.PI/2;
-            e.turret.position.set(Math.sin(backAngle)*recoil*4,-Math.cos(backAngle)*recoil*4);
+            // Local recoil is opposite the currently aimed barrel direction.
+            e.turret.position.set(-Math.sin(e.turretHeading)*recoil*4,Math.cos(e.turretHeading)*recoil*4);
             // A brief hull compression reads as a mass impulse while the chassis remains braced.
             e.hull.position.y=recoil*1.7;
             e.hull.tint=e.turret.tint=0xffffff;
