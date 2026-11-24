@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
@@ -23,6 +24,20 @@ jobs:
         with:
           path: .
           name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Wait for Pages artifact registration
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          for attempt in {1..12}; do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=$PAGES_ARTIFACT"                 | jq -e --arg name "$PAGES_ARTIFACT" '.artifacts | any(.name == $name and .expired == false)' >/dev/null; then
+              sleep 10
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Pages artifact did not register: $PAGES_ARTIFACT" >&2
+          exit 1
       - id: deployment
         uses: actions/deploy-pages@v4
         with:
