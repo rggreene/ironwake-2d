@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.10 release entry
+## v3.11 release entry
+
+- `app-v311.js` uses a transparent Needle atlas with a compact pistol carried upright and rolled sideways when braced. The burst and telegraph share three ordered offsets around a locked center, +45°, 0°, and −45° in screen coordinates.
+
+## v3.10 release
 
 - Needle spawn and paused previews use the same transparent sprite frames as gameplay. A failed remote atlas load uses an embedded transparent still. `index.html` loads `app-v310.js`.
 

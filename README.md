@@ -1,4 +1,4 @@
-# IRONWAKE v3.10 — Operation Wardog
+# IRONWAKE v3.11 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -20,7 +20,7 @@ Mules close with their labor claws and pin the Bastion in groups. See the grappl
 
 ## LS-4 Needle
 
-The light suit can start its burst sequence within 300 world units. It sprints into range on a diagonal, then circles to find an angle, plants its feet and marks the firing lane. Once the lane appears, aim is locked for the three-round burst. Move across the line to dodge, or take the shot while the Needle is planted. It sidesteps after firing and pauses to recover.
+The light suit can start its burst sequence within 300 world units. It sprints into range on a diagonal, then circles to find an angle, plants its feet and marks three firing lanes. It rolls its compact machine pistol sideways and sweeps from 45° clockwise through center to 45° counterclockwise. Aim stays locked once the lanes appear. Move between the lines to dodge, or take the shot while the Needle is planted. It sidesteps after firing and pauses to recover.
 
 ## Enemy bestiary
 
@@ -39,12 +39,13 @@ node test-mule-v34.mjs
 node test-needle-v35.mjs
 node test-needle-v36.mjs
 node test-needle-v37.mjs
+node test-needle-v311.mjs
 node test-bestiary-v38.mjs
-node --check app-v310.js
+node --check app-v311.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v310.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v311.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
 
 ## Mule grapple trial
 
