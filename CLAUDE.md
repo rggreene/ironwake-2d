@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.5 release entry
+## v3.6 release entry
+- The Needle can now close distance on a moving Bastion at base speed. The locked firing lane has a dark outline and a brighter muzzle marker. The post-burst sidestep travels farther before the same recovery window.
+- `index.html` loads `app-v36.js`. Earlier release files remain available.
+
+## v3.5 release
 
 - `app-v35.js` adds the LS-4 Needle flank, brace, burst, slip, and recovery cycle. The binary pose atlas at `assets/needle/ls4-poses-v35.png` reworks legacy painted pixels into a three-row strip. `needle-v35.mjs` owns the movement and locked-shot rules. `test-needle-v35.mjs` drives the combat loop with Needle, Mule, and Wardog together.
 - The warning lane and burst share a fixed world-space muzzle after the Needle plants. Its rounds travel as hostile projectiles and inherit the director damage multiplier. Existing light-suit spawn weights, health, and salvage remain in place.
