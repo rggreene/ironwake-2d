@@ -1,4 +1,4 @@
-# IRONWAKE v3.3 — Operation Wardog
+# IRONWAKE v3.4 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -16,7 +16,7 @@ Use the [Wardog lab](https://rggreene.github.io/ironwake-2d/wardog-lab.html) to 
 
 ## MW-1 Mule
 
-Mules turn their painted gait toward their target and advance animation frames with distance traveled. The chassis compresses briefly on contact. Movement, damage, and spawning retain their previous values.
+Mules close with their labor claws and pin the Bastion in groups. See the grapple trial below.
 
 ## Run and test locally
 
@@ -27,8 +27,13 @@ npm install
 npm run typecheck
 npm test
 node test-wardog-v32.mjs
-node --check app-v33.js
+node test-mule-v34.mjs
+node --check app-v34.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v33.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v34.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+
+## Mule grapple trial
+
+Mules telegraph a grab with raised claws, then fire a three-round close-range burst for 3 base damage per completed burst. One, two, and three grabs reduce movement to 80%, 55%, and 25% respectively. Four pin the Bastion. Aiming and firing stay active. Pull away while you can move or destroy a Mule to break a pin. Mules have a brief regrab delay after a release.
