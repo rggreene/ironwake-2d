@@ -1,30 +1,30 @@
-# IRONWAKE v2.5 — Mobile Field Support
+# IRONWAKE v3.2 — Operation Wardog
 
-A mid-run recovery carrier with a secure field-service menu. No permanent-save migration.
+A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
-## How to play
+- Move with WASD or arrows and aim with the mouse. On touch screens, use the left stick to move and the right stick to aim.
+- Collect XP for run upgrades and salvage for permanent hangar requisitions.
+- Request MOC-01 BEAST from 3:00 onward with **B** or the mobile carrier button. Field repair costs 2 run-only supply credits. Replacement Bastion and assault refit cost 4 and 3 respectively and are each available once per run. Carrier calls have a four-minute cooldown.
 
-- At **3:00**, press **B** (keyboard) or **REQUEST CARRIER** (mobile button).
-- Carrier arrives after a two-second protected approach; normal simulation pauses during service.
-- **Field repair** — costs 2 run-only supply credits, restores 40% of maximum HP.
-- **Replacement Bastion** — costs 4 credits, fully restores chassis integrity, once per run. Your acquired XP, weapon levels, and build remain intact.
-- **Assault refit** — costs 3 credits, once per run, +20 integrity and +15% kinetic damage.
-- **Close ramp** resumes the fight, with a short post-service grace period.
-- Calls have a **4-minute cooldown**, starting on each request.
-- Earn **1 supply credit per 12 kills**, starting with 3 credits. Credits do *not* consume permanent salvage.
-- Mid-run hangar shop is intentionally unaffected; these are temporary support actions, not permanent purchases.
-- For quick local testing, change `FieldSupport.firstCallAt` from 180 to 10 in `src/fieldSupport.ts` before building.
+## SV-2 Wardog
 
-## Build
+The illustrated hull has eight bearings and four track phases. Track playback advances when the hull drives or pivots, and runs backward in reverse. The turret aims independently. The Wardog brakes and aims before firing, recovers after firing, and waits at least five seconds before the next shot.
 
-`npx tsc --project tsconfig.json` (typescript 5.8.x) then `python build_v25.py`.
-The distributable files are `index.html`, `app-v25.js`, `atlas-v24.js`, and `assets/mechs/bastion/full_64.png`.
-To test locally: `python -m http.server 8000`, then open http://localhost:8000/.
+The shot starts at the muzzle registered to the illustrated frame. Projectile aim is continuous, while the turret is drawn at eight discrete bearings. The rear bearings and second recoil poses were composited from the painted source art. A missing or invalid atlas produces a console warning and loads emergency sprites.
 
-## Tests
+Use the [Wardog lab](https://rggreene.github.io/ironwake-2d/wardog-lab.html) to step through frames, select independent bearings, test recoil and watch the cooldown.
 
-`node test-field-support-v25.cjs`, `node test-forward.cjs`, `node test-shop-v24.cjs`, `node test-support-v22.cjs`.
+## Run and test locally
 
-## Known limits
+Serve the repository root with `python -m http.server 8000` and open `http://localhost:8000/`. The game loads PixiJS 8.15 from jsDelivr.
 
-The carrier is hand-drawn with PixiJS primitives, not a final authored animation atlas. It represents a protected gameplay service zone; no friendly turrets or full chassis swap cinematics yet. Its first deployment is a usability prototype. Actual mobile browser rendering has not been verified from this environment.
+```sh
+npm install
+npm run typecheck
+npm test
+node test-wardog-v32.mjs
+node --check app-v32.js
+npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
+```
+
+GitHub Pages publishes the root entry point, which loads `app-v32.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
