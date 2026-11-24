@@ -811,7 +811,13 @@ async function loadWardogIllustratedArt(){
   textures.wardogTurretDirs=Array.from({length:8},(_,dir)=>
    Array.from({length:2},()=>tex(96,96,c=>{
     c.imageSmoothingEnabled=false;
-    c.drawImage(turretImg,dir*48,0,48,48,0,0,96,96);
+    // The supplied illustration has several forward-facing duplicates.
+    // Reuse the most accurate painted bearings and pre-rotate only the missing ones,
+    // ensuring the visible cannon agrees with the actual five-second projectile bearing.
+    const source=[4,5,6,5,4,3,2,3][dir];
+    const rotation=[Math.PI,-Math.PI/2,0,0,0,0,0,Math.PI/2][dir];
+    c.translate(48,48);c.rotate(rotation);
+    c.drawImage(turretImg,source*48,0,48,48,-48,-48,96,96);
    }))
   );
   console.info('SV-2 WARDOG // PAINTED HULL AND TURRET ATLASES ONLINE');
