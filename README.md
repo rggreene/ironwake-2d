@@ -1,4 +1,4 @@
-# IRONWAKE v3.4 — Operation Wardog
+# IRONWAKE v3.5 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -18,6 +18,10 @@ Use the [Wardog lab](https://rggreene.github.io/ironwake-2d/wardog-lab.html) to 
 
 Mules close with their labor claws and pin the Bastion in groups. See the grapple trial below.
 
+## LS-4 Needle
+
+The light suit circles to find an angle, plants its feet and marks the firing lane. Once the lane appears, aim is locked for the three-round burst. Move across the line to dodge, or take the shot while the Needle is planted. It sidesteps after firing and pauses to recover.
+
 ## Run and test locally
 
 Serve the repository root with `python -m http.server 8000` and open `http://localhost:8000/`. The game loads PixiJS 8.15 from jsDelivr.
@@ -28,11 +32,12 @@ npm run typecheck
 npm test
 node test-wardog-v32.mjs
 node test-mule-v34.mjs
-node --check app-v34.js
+node test-needle-v35.mjs
+node --check app-v35.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v34.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v35.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
 
 ## Mule grapple trial
 

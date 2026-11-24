@@ -2,14 +2,18 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.4 release entry
+## v3.5 release entry
+
+- `app-v35.js` adds the LS-4 Needle flank, brace, burst, slip, and recovery cycle. The binary pose atlas at `assets/needle/ls4-poses-v35.png` reworks legacy painted pixels into a three-row strip. `needle-v35.mjs` owns the movement and locked-shot rules. `test-needle-v35.mjs` drives the combat loop with Needle, Mule, and Wardog together.
+- The warning lane and burst share a fixed world-space muzzle after the Needle plants. Its rounds travel as hostile projectiles and inherit the director damage multiplier. Existing light-suit spawn weights, health, and salvage remain in place.
+
 
 - `app-v34.js` adds the Mule grapple and close-range burst. The binary atlas `assets/mule/mw1-claws-v34.png` contains three claw poses across the four legacy gait frames. The prior v3.3 runtime remains available.
 
 - `app-v33.js` retains the v3.2 Wardog and adds the Mule animation pass. The painted four-frame Mule strip from `atlas-v24.js` is reused, with left/right facing, travel-based gait timing and contact compression from `mule-v33.mjs`.
 - The previous Wardog release remains in `app-v32.js`.
 
-- `index.html` loads PixiJS 8.15, `atlas-v24.js` and the versioned `app-v34.js` module. v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
+- `index.html` loads PixiJS 8.15, `atlas-v24.js` and the versioned `app-v35.js` module. v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
 - `src/main.ts` still predates the shipped runtime. `npm run typecheck` checks that older source and `npm run build` emits `dist/main.js`. A full source port remains pending. Keep Pages pointed at the tested release entry until the port can reproduce gameplay and saves.
 - Pages serves the repository root. Keep the upload and deployment artifact names matched and unique per run and attempt.
 
