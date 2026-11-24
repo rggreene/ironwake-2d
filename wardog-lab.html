@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IRONWAKE // Wardog lab</title><style>body{background:#182326;color:#dedbd0;font:16px system-ui;margin:20px}canvas{width:min(100%,480px);height:auto;image-rendering:pixelated;background:#293638}label{display:block;margin:12px 0}button,select,input{font:inherit}button{padding:10px}small{display:block}</style><h1>SV-2 WARDOG // ART LAB</h1><canvas width="192" height="192"></canvas><p id="status" role="status">Loading</p><label>Hull bearing <select id="h"></select></label><label>Turret bearing <select id="t"></select></label><label><input id="drive" type="checkbox"> Drive cycle</label><button id="fire">Fire test</button><label>Replacement hull (768×384 PNG) <input id="hf" type="file" accept="image/png"></label><label>Replacement turret (768×192 PNG) <input id="tf" type="file" accept="image/png"></label><small>Local files are previewed only. No saved progression is accessed.</small><script>
+const $=id=>document.getElementById(id),c=document.querySelector('canvas').getContext('2d');c.imageSmoothingEnabled=false;
+for(const id of ['h','t'])for(const [i,n] of ['N','NE','E','SE','S','SW','W','NW'].entries())$(id).add(new Option(n,i));
+let hull,turret,hs=false,ts=false,last=-Infinity,frame=0;
+async function load(src){const im=new Image();im.src=src;await im.decode();return im}
+async function initial(){try{[hull,turret]=await Promise.all([load('assets/wardog/hull-directions.png'),load('assets/wardog/turret-directions.png')]);}catch(e){$('status').textContent=String(e)}}
+for(const [id,isHull] of [['hf',true],['tf',false]])$(id).onchange=async()=>{const f=$(id).files[0];if(!f)return;const url=URL.createObjectURL(f);try{const im=await load(url);if(im.width!==768||im.height!==(isHull?384:192))throw Error('Unexpected atlas dimensions');if(isHull){hull=im;hs=true}else{turret=im;ts=true}}catch(e){alert(String(e))}finally{URL.revokeObjectURL(url)}};
+$('fire').onclick=()=>{const now=performance.now();if(now-last>=5000)last=now};
+function draw(now){requestAnimationFrame(draw);c.clearRect(0,0,192,192);if(!hull||!turret)return;const h=+$('h').value,t=+$('t').value,age=now-last,recoil=Math.max(0,1-age/180),a=t*Math.PI/4;frame=$('drive').checked?Math.floor(now/140)%4:0;
+const hm=[4,3,2,1,0,7,6,5],tm=[4,3,2,1,0,7,6,5];
+if(hs)c.drawImage(hull,hm[h]*96,frame*96,96,96,48,48,96,96);else c.drawImage(hull,h*48,0,48,48,48,48,96,96);
+c.save();c.translate(96-Math.sin(a)*recoil*5,96+Math.cos(a)*recoil*5);
+if(ts){const map=[4,1,2,1,0,7,6,7];if(t===0)c.rotate(Math.PI);if(t===1)c.rotate(-Math.PI/2);if(t===7)c.rotate(Math.PI/2);c.drawImage(turret,map[t]*96,(recoil>.34?1:0)*96,96,96,-48,-60,96,96)}else{const map=[4,5,6,5,4,3,2,3],rot=[Math.PI,-Math.PI/2,0,0,0,0,0,Math.PI/2];c.rotate(rot[t]);c.drawImage(turret,map[t]*48,0,48,48,-48,-48,96,96)}c.restore();
+if(age<100){c.fillStyle='#ffd9a2';c.beginPath();c.arc(96+Math.sin(a)*43,96-Math.cos(a)*43,5,0,Math.PI*2);c.fill()}
+$('fire').disabled=age<5000;$('status').textContent='Hull: '+(hs?'local replacement':'repository')+' | Turret: '+(ts?'local replacement (approximate rear bearings)':'repository')+' | Frame '+(frame+1)+' | Cooldown '+Math.max(0,(5000-age)/1000).toFixed(1)+'s';
+}initial();requestAnimationFrame(draw);
+</script></html>
