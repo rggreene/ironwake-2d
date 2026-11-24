@@ -2,9 +2,12 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.2 release entry
+## v3.3 release entry
 
-- `index.html` loads PixiJS 8.15, `atlas-v24.js` and the versioned `app-v32.js` module. v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
+- `app-v33.js` retains the v3.2 Wardog and adds the Mule animation pass. The painted four-frame Mule strip from `atlas-v24.js` is reused, with left/right facing, travel-based gait timing and contact compression from `mule-v33.mjs`.
+- The previous Wardog release remains in `app-v32.js`.
+
+- `index.html` loads PixiJS 8.15, `atlas-v24.js` and the versioned `app-v33.js` module. v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
 - `src/main.ts` still predates the shipped runtime. `npm run typecheck` checks that older source and `npm run build` emits `dist/main.js`. A full source port remains pending. Keep Pages pointed at the tested release entry until the port can reproduce gameplay and saves.
 - Pages serves the repository root. Keep the upload and deployment artifact names matched and unique per run and attempt.
 

@@ -1,4 +1,4 @@
-# IRONWAKE v3.2 — Operation Wardog
+# IRONWAKE v3.3 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -14,6 +14,10 @@ The shot starts at the muzzle registered to the illustrated frame. Projectile ai
 
 Use the [Wardog lab](https://rggreene.github.io/ironwake-2d/wardog-lab.html) to step through frames, select independent bearings, test recoil and watch the cooldown.
 
+## MW-1 Mule
+
+Mules turn their painted gait toward their target and advance animation frames with distance traveled. The chassis compresses briefly on contact. Movement, damage, and spawning retain their previous values.
+
 ## Run and test locally
 
 Serve the repository root with `python -m http.server 8000` and open `http://localhost:8000/`. The game loads PixiJS 8.15 from jsDelivr.
@@ -23,8 +27,8 @@ npm install
 npm run typecheck
 npm test
 node test-wardog-v32.mjs
-node --check app-v32.js
+node --check app-v33.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v32.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v33.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
