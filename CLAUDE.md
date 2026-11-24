@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.8 release entry
+## v3.9 release entry
+
+- `app-v39.js` loads the transparent Needle pose atlas at `assets/needle/ls4-poses-v39.png`. All twelve frames keep their original 128 × 128 cell registration.
+
+## v3.8 release
 
 - The main-menu Bestiary in `app-v38.js` uses the same enemy spawner, AI and projectile updates as normal deployment. Its independent ticker branch updates a dummy, counts damage, and skips the director, salvage, progression and player weapons.
 - `bestiary-v38.mjs` defines encounter presets and dummy motion. Closing or restarting the lab removes its enemies, warning visuals, bullets, and effects. The arena zoom is separate from the combat camera.

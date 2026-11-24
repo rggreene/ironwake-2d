@@ -1,4 +1,4 @@
-# IRONWAKE v3.8 — Operation Wardog
+# IRONWAKE v3.9 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -40,11 +40,11 @@ node test-needle-v35.mjs
 node test-needle-v36.mjs
 node test-needle-v37.mjs
 node test-bestiary-v38.mjs
-node --check app-v38.js
+node --check app-v39.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v38.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v39.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
 
 ## Mule grapple trial
 
