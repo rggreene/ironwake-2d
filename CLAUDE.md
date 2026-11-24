@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.6 release entry
+## v3.7 release entry
+
+- The Needle can commit at 300 world units. The telegraph and projectile lifetime share a 336-unit distance measured from the muzzle. `index.html` loads `app-v37.js`.
+
+## v3.6 release
 - The Needle can now close distance on a moving Bastion at base speed. The locked firing lane has a dark outline and a brighter muzzle marker. The post-burst sidestep travels farther before the same recovery window.
 - `index.html` loads `app-v36.js`. Earlier release files remain available.
 
