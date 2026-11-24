@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.9 release entry
+## v3.10 release entry
+
+- Needle spawn and paused previews use the same transparent sprite frames as gameplay. A failed remote atlas load uses an embedded transparent still. `index.html` loads `app-v310.js`.
+
+## v3.9 release
 
 - `app-v39.js` loads the transparent Needle pose atlas at `assets/needle/ls4-poses-v39.png`. All twelve frames keep their original 128 × 128 cell registration.
 
