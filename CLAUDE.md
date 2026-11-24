@@ -2,7 +2,12 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.7 release entry
+## v3.8 release entry
+
+- The main-menu Bestiary in `app-v38.js` uses the same enemy spawner, AI and projectile updates as normal deployment. Its independent ticker branch updates a dummy, counts damage, and skips the director, salvage, progression and player weapons.
+- `bestiary-v38.mjs` defines encounter presets and dummy motion. Closing or restarting the lab removes its enemies, warning visuals, bullets, and effects. The arena zoom is separate from the combat camera.
+
+## v3.7 release
 
 - The Needle can commit at 300 world units. The telegraph and projectile lifetime share a 336-unit distance measured from the muzzle. `index.html` loads `app-v37.js`.
 
