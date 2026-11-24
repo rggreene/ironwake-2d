@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.11 release entry
+## v3.12 release entry
+
+- `app-v312.js` removes the Needle’s projected warning lines. Its braced pose and locked counterclockwise sweep remain.
+
+## v3.11 release
 
 - `app-v311.js` uses a transparent Needle atlas with a compact pistol carried upright and rolled sideways when braced. The burst and telegraph share three ordered offsets around a locked center, +45°, 0°, and −45° in screen coordinates.
 
