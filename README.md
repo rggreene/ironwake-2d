@@ -1,4 +1,4 @@
-# IRONWAKE v3.12 — Operation Wardog
+# IRONWAKE v3.13 — Operation Wardog
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
@@ -22,6 +22,10 @@ Mules close with their labor claws and pin the Bastion in groups. See the grappl
 
 The light suit can start its burst sequence within 300 world units. It sprints into range on a diagonal, then circles to find an angle, plants its feet to brace. It rolls its compact machine pistol sideways and sweeps from 45° clockwise through center to 45° counterclockwise. Aim locks when it braces. Watch the stance change to time your dodge, or take the shot while the Needle is planted. It sidesteps after firing and pauses to recover.
 
+## Thruster strafe
+
+Hold a movement direction and press **Space** on desktop, or tap **Boost** above the right aim stick on touch. Boost lasts 0.24 seconds and recharges in 2.4 seconds. The touch button shows its recharge and the aim stick briefly retains its last direction on release. Mule grips slow the boost and a full pin prevents it.
+
 ## Enemy bestiary
 
 Open **Enemy Bestiary** from the main menu. Pick any enemy or the mixed patrol, set the start distance and dummy movement, then watch the shipped attack logic in action. The dummy records damage and cannot die. Pause, slow playback, step 50 ms at a time, or restart the encounter. The arena does not award progression.
@@ -40,12 +44,13 @@ node test-needle-v35.mjs
 node test-needle-v36.mjs
 node test-needle-v37.mjs
 node test-needle-v311.mjs
+node test-thruster-v313.mjs
 node test-bestiary-v38.mjs
-node --check app-v312.js
+node --check app-v313.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v312.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v313.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
 
 ## Mule grapple trial
 
