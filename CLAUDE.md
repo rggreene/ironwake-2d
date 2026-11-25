@@ -2,7 +2,11 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
-## v3.13 release entry
+## v3.14 release entry
+
+- `app-v314.js` loads the pixel-art combat upgrade icons for all 18 offers. The atlas is `assets/ui/upgrade-icons-v314.png`. Touch-width cards place the icon beside the upgrade name and description.
+
+## v3.13 release
 
 - `app-v313.js` introduces the Bastion thruster strafe on Space or the touch Boost button. Direction is sampled from movement at ignition and kept for the burst. Auto-fire and touch aim retention keep the gun pointed independently. The effect uses twin exhaust cones, a braced pose, chassis lean and dust. `thruster-v313.mjs` owns the run-local timing and movement.
 
