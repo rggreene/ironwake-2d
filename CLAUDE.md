@@ -2,6 +2,12 @@
 
 Read this before changing the game. Preserve the canonical timeline, gameplay and permanent salvage saves. Use grounded military-industrial designs and illustrated neo-retro pixel art.
 
+## v3.15 release entry
+
+The root loads `app-v315.js`, forked from the shipped v3.14 module. Survival and the Bestiary share the same combat loop as before. Only Iron District instantiates `district-v315.mjs`. Its field and extraction dialogs pause the combat clock. Current Goliath director timing and the one-active-boss limit still apply. Field service gives way to pickup at 14:00 in this operation.
+
+Release scope is two field jobs, one ramp decision, and one compact objective readout. A completed job unlocks the delayed pickup. Only successful boarding of that pickup adds one to the separate `ironwake_blueprint_components_v1` counter. Component spending is future work. Run `node test-district-v315.mjs` alongside the existing release checks. Verify readability at phone scale and full-length encounter pacing in play.
+
 ## v3.14 release entry
 
 - `app-v314.js` loads the pixel-art combat upgrade icons for all 18 offers. The atlas is `assets/ui/upgrade-icons-v314.png`. Touch-width cards place the icon beside the upgrade name and description.
@@ -50,7 +56,7 @@ Read this before changing the game. Preserve the canonical timeline, gameplay an
 - `app-v33.js` retains the v3.2 Wardog and adds the Mule animation pass. The painted four-frame Mule strip from `atlas-v24.js` is reused, with left/right facing, travel-based gait timing and contact compression from `mule-v33.mjs`.
 - The previous Wardog release remains in `app-v32.js`.
 
-- `index.html` loads PixiJS 8.15, `atlas-v24.js` and the versioned `app-v35.js` module. v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
+- `index.html` loads PixiJS 8.15, `atlas-v24.js` and a versioned gameplay module (current entry above). v3.2 was forked from the actual v3.1 release runtime to retain newer gameplay and its save schema.
 - `src/main.ts` still predates the shipped runtime. `npm run typecheck` checks that older source and `npm run build` emits `dist/main.js`. A full source port remains pending. Keep Pages pointed at the tested release entry until the port can reproduce gameplay and saves.
 - Pages serves the repository root. Keep the upload and deployment artifact names matched and unique per run and attempt.
 

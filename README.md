@@ -1,10 +1,16 @@
-# IRONWAKE v3.14 — Operation Wardog
+# IRONWAKE v3.15 — Iron District
 
 A military-industrial mecha bullet-heaven roguelite built with PixiJS. [Play IRONWAKE](https://rggreene.github.io/ironwake-2d/).
 
 - Move with WASD or arrows and aim with the mouse. On touch screens, use the left stick to move and the right stick to aim.
 - Collect XP for run upgrades and salvage for permanent hangar requisitions.
 - Request MOC-01 BEAST from 3:00 onward with **B** or the mobile carrier button. Field repair costs 2 run-only supply credits. Replacement Bastion and assault refit cost 4 and 3 respectively and are each available once per run. Carrier calls have a four-minute cooldown.
+
+## Deployments
+
+Choose Survival for an open-ended run or Iron District for a scheduled pickup. At 5:00 the operation pauses for a field job. Cross three switches in order at the rail yard, or spend 30 cumulative seconds in the crane apron at the depot. The HUD shows one objective and an arrow when its destination is offscreen.
+
+BEAST reserves its pickup at 14:00 and opens the ramp at 15:00. Reach it to board. Completing your job also lets you send BEAST away for 90 seconds. Board the second pickup alive to bank a blueprint component. Ordinary salvage follows the usual recovery rules. The report tracks components for future use.
 
 ## SV-2 Wardog
 
@@ -46,11 +52,12 @@ node test-needle-v37.mjs
 node test-needle-v311.mjs
 node test-thruster-v313.mjs
 node test-bestiary-v38.mjs
-node --check app-v314.js
+node test-district-v315.mjs
+node --check app-v315.js
 npx tsc --allowJs --checkJs --noEmit --strict --target es2022 --module nodenext wardog-v32.mjs
 ```
 
-GitHub Pages publishes the root entry point, which loads `app-v314.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
+GitHub Pages publishes the root entry point, which loads `app-v315.js`. The TypeScript build targets the older gameplay source and emits `dist/main.js`. See `CLAUDE.md` for the release handoff.
 
 ## Mule grapple trial
 
